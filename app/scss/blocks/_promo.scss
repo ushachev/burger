@@ -1,0 +1,29 @@
+.promo {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	margin-left: 95px;
+	padding-bottom: 75px;
+
+	&__image {
+		width: 451px;
+		height: 424px;
+		overflow: hidden;
+	}
+
+	&__slogan {
+		margin: 0;
+		margin-top: 65px;
+		margin-left: 12px;
+		flex-grow: 1;
+		width: 450px;
+	}
+
+	&__slogan-part2 {
+		margin-top: 22px;
+		font-family: lifehack;
+		font-size: 60px;
+		line-height: 1;
+		color: #fff;
+	}
+}

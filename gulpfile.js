@@ -64,7 +64,12 @@ gulp.task('rsync', function() {
 });
 
 gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
-	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
+	// gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
+	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', function() {
+		setTimeout(function() {
+			gulp.start('styles');
+			}, 1000);
+	});
 	gulp.watch(['libs/**/*.js', 'app/js/app.min.js'], ['js']);
 	gulp.watch('app/*.html', browsersync.reload)
 });
