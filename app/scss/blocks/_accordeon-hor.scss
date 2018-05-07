@@ -1,0 +1,129 @@
+.accordeon-hor {
+	display: flex;
+	position: absolute;
+	right: 0;
+	height: 100%;
+
+	&.tapped {
+
+		@include phone {
+
+			.accordeon-hor__item:not([class$="active"]) {
+				display: none;
+			}
+		}
+	}
+
+	&__item {
+		display: flex;
+	}
+
+	&__title {
+		position: relative;
+		margin: 0;
+		width: rem(80px);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		overflow: hidden;
+		cursor: pointer;
+		
+		span {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			margin-bottom: rem(40px);
+			@include title(rem(40px), $title-secondary-color);
+			white-space: nowrap;
+			transform:
+					translateX(-50%)
+					translateY(50%)
+					rotate(-90deg)
+					translateX(50%);
+
+			.accordeon-hor__item_active & {
+				color: $title-main-color;
+			}
+		}
+
+		.accordeon-hor__item_meat & {
+			background-image: url(../img/bg_accord-meat.jpg);
+		}
+
+		.accordeon-hor__item_veg & {
+			background-image: url(../img/bg_accord-veg.jpg);
+		}
+
+		.accordeon-hor__item_diet & {
+			background-image: url(../img/bg_accord-diet.jpg);
+		}
+	}
+
+	&__container {
+		position: relative;
+		width: 0;
+		box-sizing: border-box;
+		background-color: rgba(47, 50, 52, 0.93);
+		overflow: hidden;
+
+		.accordeon-hor__item_active & {
+			width: rem(540px);
+			padding: rem(60px) rem(33px);
+
+			@include tablet {
+				width: 100%;
+			}
+
+			@include phone-small {
+				padding: rem(30px) rem(20px);
+			}
+		}
+
+		.accordeon-hor__item_active:last-child & {
+			width: rem(540px + $scroll-pag-offset);
+			padding-right: rem(33px + $scroll-pag-offset);
+
+			@include tablet {
+				width: 100%;
+			}
+
+			@include phone-small {
+				padding: rem(30px) rem(20px);
+			}
+		}
+
+		@include phone {
+
+			&::before,
+			&::after {
+				position: absolute;
+				display: block;
+				content: "";
+				width: rem(25px);
+				height: 0;
+				top: rem(49px);
+				right: rem(28px);
+				border: 2px solid $text-main-color;
+				border-radius: 2px;
+
+				@include phone-small {
+					width: 1rem;
+					top: 1.5rem;
+					right: 1rem;
+				}
+			}
+
+			&::before {
+				transform: rotate(45deg);
+			}
+
+			&::after {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&__content {
+		line-height: $main-font-line-heit;
+	}
+}

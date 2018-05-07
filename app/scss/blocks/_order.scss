@@ -1,0 +1,24 @@
+.order {
+	align-items: center;
+
+	.container {
+		align-items: center;
+		padding-bottom: rem(10px);
+
+		@include tablet {
+			padding-bottom: rem(107px);
+		}
+
+		@include phone-small {
+			justify-content: center;
+			padding-bottom: rem(15px);
+		}
+	}
+
+	&__title.title {
+
+		@include phone-small {
+			margin-bottom: rem(26px);
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.team {
+	position: relative;
+
+	&__overlay {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+		padding: 0 8% rem(33px);
+		width: 49%;
+		height: 100%;
+		right: 0;
+		background-color: rgba(47, 50, 52, 0.93);
+
+		@include tablet {
+			justify-content: center;
+			width: 100%;
+			padding-bottom: rem(75px);
+		}
+
+		@include phone {
+			padding-bottom: rem(22px);
+		}
+	}
+}
+

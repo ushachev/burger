@@ -1,0 +1,207 @@
+.form {
+	display: flex;
+
+	@include tablet {
+		flex-direction: column;
+		max-width: rem(506px);
+	}
+
+	@include phone {
+		max-width: rem(566px);
+	}
+	
+	&__left-part {
+		flex: 1;
+		margin-right: rem(20px);
+
+		@include tablet {
+			margin-right: 0;
+		}
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__label {
+		flex: 1;
+		margin-right: rem(20px);
+		margin-bottom: rem(18px);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__inp-name {
+			display: block;
+			margin-bottom: rem(5px);
+		}
+
+	&__input-txt,
+	&__textarea {
+		width: 100%;
+		padding: rem(8px) rem(20px);
+		box-sizing: border-box;
+		border: 2px solid #fff;
+		border-radius: 5px;
+		outline: none;
+
+		&:focus {
+			border-color: $title-main-color;
+		}
+
+	}
+
+	&__right-part {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	&__textarea {
+		min-height: rem(110px);
+		resize: none;
+		margin-bottom: rem(19px);
+	}
+
+	&__all-btn-wrap {
+		display: flex;
+		flex-direction: column;
+
+		@include phone {
+			margin-top: rem(21px);
+			align-items: center;
+		}
+
+		@include phone-small {
+			margin-top: 0;
+		}
+	}
+
+	&__pay {
+		margin-bottom: rem(26px);
+
+		@include phone {
+			margin-bottom: rem(40px);
+		}
+
+		@include phone-small {
+			margin-bottom: rem(18px);
+		}
+	}
+
+	&__radio {
+		position: absolute;
+		left: -9999px;
+	}
+
+	&__label-radio {
+		position: relative;
+		margin: 0 rem(17px) 0 rem(25px);
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: "";
+			width: 15px;
+			height: 15px;
+			top: 0;
+			left: -25px;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+
+		.form__radio:checked
+		+
+		&::after {
+			position: absolute;
+			display: block;
+			content: "";
+			width: 7px;
+			height: 7px;
+			top: 4px;
+			left: -21px;
+			border-radius: 50%;
+			background-color: $corp-color;
+		}
+
+		.form__radio:focus + & {
+			outline-offset: 2px;
+			outline: 1px dotted $title-main-color;
+		}
+	}
+
+	&__check {
+		position: absolute;
+		left: -9999px;
+	}
+
+	&__label-check {
+		position: relative;
+		margin-left: rem(25px);
+		margin-bottom: rem(18px);
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: "";
+			width: 15px;
+			height: 15px;
+			top: 0;
+			left: -25px;
+			background-color: #fff;
+		}
+
+		.form__check:checked
+		+
+		&::after {
+			position: absolute;
+			display: block;
+			top: 0;
+			left: -23px;
+			content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" 
+				width="11" height="9" viewBox="0 0 128.042 114.043">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M51.993,114.043
+				c-1.666,0-3.333,0-4.999,0C31.33,96.046,15.665,78.048,0,60.05
+				c0-1.666,0-3.333,0-4.999c5.408-5.388,10.779-10.815,16.238-16.152
+				c4.448-4.35,7.695-4.26,11.768,0.401c6.347,7.264,12.654,14.565,18.827,21.977
+				c1.9,2.282,2.987,2.783,5.171,0.133c16.909-20.522,33.97-40.917,50.983-61.352
+				c1.666,0,3.333,0,4.999,0c7.063,6.269,13.781,12.883,19.998,19.998
+				c0,1.666,0,3.333,0,4.999c-9.925,11.595-19.861,23.18-29.771,34.789
+				C82.797,77.9,67.399,95.976,51.993,114.043z" fill="#e45028" />
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M127.984,20.055
+				c-6.217-7.115-12.936-13.729-19.998-19.998c5.999,0,12,0.088,17.996-0.055
+				c1.74-0.042,2.098,0.315,2.057,2.056
+				C127.896,8.055,127.984,14.056,127.984,20.055z" fill="#e45028" /></svg>');
+		}
+
+		.form__check:focus + & {
+			outline-offset: 2px;
+			outline: 1px dotted $title-main-color;
+		}
+
+		@include tablet {
+			margin-bottom: rem(40px);
+		}
+
+		@include phone-small {
+			margin-bottom: rem(18px);
+		}
+	}
+
+	&__btn-res {
+		margin-left: rem(15px);
+		border: none;
+		background: none;
+		color: $text-main-color;
+	}
+
+	&__btn,
+	&__btn-res {
+
+		&:focus {
+			outline-color: $title-main-color;
+		}
+	}
+}

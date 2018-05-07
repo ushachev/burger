@@ -1,7 +1,7 @@
 .scroll-paginator {
 	position: fixed;
 	top: 14%;
-	right: 5%;
+	right: $scroll-pag-offset;
 
 	&__item {
 		height: 21px;
@@ -30,6 +30,10 @@
 			width: 14px;
 			height: 14px;
 		}
+	}
+
+	@include tablet {
+		display: none;
 	}
 }
 

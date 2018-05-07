@@ -2,11 +2,14 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	flex-basis: 625px;
 
 	&__list {
 		display: flex;
 		justify-content: flex-end;
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 	&__item {
@@ -17,12 +20,11 @@
 			display: inline-block;
 			vertical-align: middle;
 			@include circle(2px);
-			margin: 0 14px;
+			margin: 0 rem(14px);
 		}
 	}
 
-	&__link,
-	&__order-btn {
+	&__link {
 		@extend %btn-properties;
 		text-decoration: none;
 	}
@@ -31,8 +33,8 @@
 		text-decoration: underline;
 	}
 
-	&__order-btn {
-		@include btn($corp-color);
-		margin-left: 15px;
+	&__btn {
+		margin-left: rem(15px);
 	}
 }
+
