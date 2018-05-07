@@ -129,6 +129,10 @@
 		.form__radio:focus + & {
 			outline-offset: 2px;
 			outline: 1px dotted $title-main-color;
+
+			@include tablet {
+				outline: none;
+			}
 		}
 	}
 
@@ -141,6 +145,7 @@
 		position: relative;
 		margin-left: rem(25px);
 		margin-bottom: rem(18px);
+		align-self: flex-start;
 
 		&::before {
 			position: absolute;
@@ -179,9 +184,14 @@
 		.form__check:focus + & {
 			outline-offset: 2px;
 			outline: 1px dotted $title-main-color;
+
+			@include tablet {
+				outline: none;
+			}
 		}
 
 		@include tablet {
+			align-self: auto;
 			margin-bottom: rem(40px);
 		}
 
