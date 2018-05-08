@@ -1,0 +1,35 @@
+.scroll-paginator {
+	position: fixed;
+	top: 14%;
+	right: 5%;
+
+	&__item {
+		height: 21px;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		@include circle(3px);
+		vertical-align: middle;
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: "";
+			top: 50%;
+			left: 50%;
+			@include circle(2px, transparent);
+			border: 1px solid #fff;
+			transform: translate(-50%, -50%);
+			transition: width, height, 0.4s;
+		}
+
+		&.active::before,
+		&:hover::before {
+			width: 14px;
+			height: 14px;
+		}
+	}
+}
+

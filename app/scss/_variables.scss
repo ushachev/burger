@@ -1,0 +1,20 @@
+// ===========переменные==================
+$corp-color: #e45028;
+$title-main-color: #f9b43b;
+$title-secondary-color: #fff;
+$text-main-color: #fff;
+$text-secondary-color: #2f3234;
+$main-font: ubuntu, sans-serif;
+$title-font: gagalin, sans-serif;
+$sub-title-font: lifehack, cursive;
+
+$sections: start, about, team, menu, form;
+
+// ============заполнители==============
+
+%btn-properties {
+	font-weight: 500;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: $text-main-color;
+}

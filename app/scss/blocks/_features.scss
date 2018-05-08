@@ -1,0 +1,35 @@
+.features {
+	display: flex;
+	justify-content: space-between;
+	width: 960px;
+	color: $text-secondary-color;
+
+	&__item {
+		width: 320px;
+		padding: 0 18px;
+		text-align: center;
+	}
+
+	&__icon {
+		display: inline-flex;
+		min-height: 90px;
+		max-width: 100px;
+		max-height: 90px;
+
+		img {
+			margin: auto;
+		}		
+	}
+
+	&__title {
+		margin: 30px 0 15px;
+		font-family: $sub-title-font;
+		font-size: 24px;
+	}
+
+	&__info {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 1.7;
+	}
+}

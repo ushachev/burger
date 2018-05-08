@@ -1,0 +1,13 @@
+.about {
+
+	.container {
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__slogan.title {
+		margin: 0;
+		margin-bottom: 42px;
+		color: $text-secondary-color;
+	}
+}
