@@ -1,0 +1,135 @@
+.slider {
+
+	@include tablet {
+		padding-bottom: rem(20px);
+	}
+
+	@include phone-small {
+		padding-bottom: 0;
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		min-height: rem(470px);
+
+		@include tablet {
+			flex-direction: column;
+			justify-content: flex-end;
+			min-height: rem(770px);
+		}
+
+		@include phone {
+			min-height: rem(670px);
+		}
+
+		@include phone-small {
+			min-height: auto;
+			height: 95vh;
+		}
+	}
+
+	&__image {
+		width: rem(457px);
+		height: rem(314px);
+		max-width: 95%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		overflow: hidden;
+	}
+
+	&__content {
+		// flex: 1;
+		margin-left: rem(25px);
+		max-width: rem(445px);
+
+		@include tablet {
+			margin-left: 0;
+			margin-top: rem(37px);
+			max-width: rem(603px);
+			text-align: center;
+		}
+
+		@include phone-small {
+			margin-top: 0;
+		}
+	}
+
+	&__title.title {
+		color: $title-secondary-color;
+		line-height: 1;
+
+		@include phone-small {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__info {
+		min-width: rem(360px);
+		margin-bottom: rem(30px);
+		line-height: $main-font-line-heit;
+
+		@include tablet {
+			margin-bottom: rem(53px);
+		}
+
+		@include phone-small {
+			margin-bottom: 0;
+		}
+	}
+
+	&__price-block {
+		display: inline-block;
+		margin-right: rem(29px);
+		vertical-align: bottom;
+		color: $corp-color;
+	}
+
+	&__price.title {
+		line-height: 1;
+		color: $corp-color;
+	}
+
+	&__unit {
+		font-size: 30px;
+		font-family: $title-font;
+	}
+
+	&__btn {
+		vertical-align: bottom;
+	}
+
+	&__composition {
+		position: absolute;
+		top: 0;	
+
+		@include tablet {
+			left: 10%;
+		}
+
+		@include phone {
+			left: 0;
+		}
+	}
+
+	&__kkal {
+		position: absolute;
+		bottom: 0;
+
+		@include tablet {
+			top: 0;
+			right: 10%;
+		}
+
+		@include phone {
+			right: 0;
+		}
+	}
+} 

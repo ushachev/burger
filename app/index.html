@@ -18,24 +18,24 @@
 						<h1 class="logo__title">Магазин бургеров</h1>
 					</div>
 					<nav class="main-nav">
-						<ul class="main-nav__list">
-							<li class="main-nav__item">
-								<a href="#page2" class="main-nav__link">О нас</a>
+						<ul class="main-nav__list nav-menu">
+							<li class="nav-menu__item">
+								<a href="#page2" class="nav-menu__link">О нас</a>
 							</li>
-							<li class="main-nav__item">
-								<a href="#page3" class="main-nav__link">Бургеры</a>
+							<li class="nav-menu__item">
+								<a href="#page3" class="nav-menu__link">Бургеры</a>
 							</li>
-							<li class="main-nav__item">
-								<a href="#page4" class="main-nav__link">Команда</a>
+							<li class="nav-menu__item">
+								<a href="#page4" class="nav-menu__link">Команда</a>
 							</li>
-							<li class="main-nav__item">
-								<a href="#page5" class="main-nav__link">Меню</a>
+							<li class="nav-menu__item">
+								<a href="#page5" class="nav-menu__link">Меню</a>
 							</li>
-							<li class="main-nav__item">
-								<a href="#page6" class="main-nav__link">Отзывы</a>
+							<li class="nav-menu__item">
+								<a href="#page6" class="nav-menu__link">Отзывы</a>
 							</li>
-							<li class="main-nav__item">
-								<a href="#page8" class="main-nav__link">Контакты</a>
+							<li class="nav-menu__item">
+								<a href="#page8" class="nav-menu__link">Контакты</a>
 							</li>
 						</ul>
 						<a href="#page7" class="main-nav__btn order-btn">Заказать</a>
@@ -53,6 +53,38 @@
 				</div>
 				<a href="#page2" class="start__page-down link link_page-down"></a>
 			</div>
+			<!-- <div class="start__tablet-menu overlay-menu">
+				<div class="container">
+					<div class="header">
+						<div class="logo">
+							<a><img class="visually-hidden" src="./img/logo.png" width="92" height="69" alt="Логотип Mr.Burger"></a>
+						</div>
+						<nav class="main-nav">
+							<button class="humburger-menu-btn humburger-menu-btn_clicked"></button>
+						</nav>
+					</div>
+					<ul class="overlay-menu__list nav-menu">
+						<li class="nav-menu__item">
+							<a href="#page2" class="nav-menu__link">О нас</a>
+						</li>
+						<li class="nav-menu__item">
+							<a href="#page3" class="nav-menu__link">Бургеры</a>
+						</li>
+						<li class="nav-menu__item">
+							<a href="#page4" class="nav-menu__link">Команда</a>
+						</li>
+						<li class="nav-menu__item">
+							<a href="#page5" class="nav-menu__link">Меню</a>
+						</li>
+						<li class="nav-menu__item">
+							<a href="#page6" class="nav-menu__link">Отзывы</a>
+						</li>
+						<li class="nav-menu__item">
+							<a href="#page8" class="nav-menu__link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+			</div> -->
 		</section>
 		<section id="page2" class="about section">
 			<div class="container">
@@ -86,6 +118,101 @@
 						</div>
 					</li>
 				</ul>
+			</div>
+		</section>
+		<section id="page3" class="burgers section">
+			<div class="container">
+				<div class="burgers__slider">
+					<a class="burgers__prev link link_prev"></a>
+					<div class="slider">
+						<ul class="slider__list">
+							<li class="slider__item">
+								<div class="slider__image" style="background-image: url(img/slider/burger-slider1.png)">
+									<img class="visually-hidden" src="img/slider/burger-slider1.png" width="457" height="314" alt="Фото бургера">
+								</div>
+								<div class="slider__content">
+									<h2 class="slider__title title">Dark BEEF Burger</h2>
+									<div class="slider__info">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+									<div class="slider__price-block">
+										<span class="slider__price title">500</span>
+										<span class="slider__unit">рублей</span>
+									</div>
+									<button class="slider__btn order-btn">Заказать</button>
+								</div>
+								<div class="slider__composition composition">
+									<svg width="46" height="44" fill="#fff">
+										<use xlink:href="img/sprite.svg#burger"></use>	
+									</svg>
+									<span class="composition__label">состав</span>
+									<ul class="composition__list">
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="44" height="39" fill="#e25028">
+													<use xlink:href="img/sprite.svg#beef"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Говядина</span>
+											<span class="composition__weight">300 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="48" height="30" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#buns"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Булочки</span>
+											<span class="composition__weight">100 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="38" height="38" fill="#8BC03F">
+													<use xlink:href="img/sprite.svg#salad"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Зелень</span>
+											<span class="composition__weight">70 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="41" height="43" fill="#e25028">
+													<use xlink:href="img/sprite.svg#sauce"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Соус</span>
+											<span class="composition__weight">150 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="43" height="37" fill="#8ac03e">
+													<use xlink:href="img/sprite.svg#cucumber"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Овощи</span>
+											<span class="composition__weight">200 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="39" height="34" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#cheese"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Сыр</span>
+											<span class="composition__weight">80 г</span>
+										</li>
+									</ul>
+								</div>
+								<div class="slider__kkal kkal">
+									<svg width="60" height="60" fill="#fff">
+										<use xlink:href="img/sprite.svg#kkal"></use>	
+									</svg>
+									<span class="kkal__quantity">1200</span>
+									<span class="kkal__unit">ккал</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<a class="burgers__next link link_next"></a>
+				</div>
 			</div>
 		</section>
 		<section id="page4" class="team section">
@@ -372,6 +499,40 @@
 		<li class="scroll-paginator__item"><a href="#page8" class="scroll-paginator__link"></a></li>
 	</ul>
 </body>
+<script type="template" id="overlay-menu">
+	<div class="overlay-menu">
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<a><img class="visually-hidden" src="./img/logo.png" width="92" height="69" alt="Логотип Mr.Burger"></a>
+				</div>
+				<nav class="main-nav">
+					<button class="humburger-menu-btn"></button>
+				</nav>
+			</div>
+			<ul class="overlay-menu__list nav-menu">
+				<li class="nav-menu__item">
+					<a href="#page2" class="nav-menu__link">О нас</a>
+				</li>
+				<li class="nav-menu__item">
+					<a href="#page3" class="nav-menu__link">Бургеры</a>
+				</li>
+				<li class="nav-menu__item">
+					<a href="#page4" class="nav-menu__link">Команда</a>
+				</li>
+				<li class="nav-menu__item">
+					<a href="#page5" class="nav-menu__link">Меню</a>
+				</li>
+				<li class="nav-menu__item">
+					<a href="#page6" class="nav-menu__link">Отзывы</a>
+				</li>
+				<li class="nav-menu__item">
+					<a href="#page8" class="nav-menu__link">Контакты</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</script>
 <script src="./libs/jquery-3.3.1.min.js"></script>
-<script src="./js/app.min.js"></script>
+<script src="js/app.min.js"></script>
 </html>

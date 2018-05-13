@@ -70,7 +70,8 @@ gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 			gulp.start('styles');
 			}, 1000);
 	});
-	gulp.watch(['libs/**/*.js', 'app/js/app.min.js'], ['js']);
+	// gulp.watch(['libs/**/*.js', 'app/js/app.min.js'], ['js']);
+	gulp.watch(['app/js/*.js', 'app/js/app.min.js'], ['js']);
 	gulp.watch('app/*.html', browsersync.reload)
 });
 

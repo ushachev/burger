@@ -3,8 +3,9 @@
 	justify-content: flex-end;
 	align-items: center;
 
-	&__list {
-		display: flex;
+	// &__list {
+	.nav-menu {
+		// display: flex;
 		justify-content: flex-end;
 
 		@include tablet {
@@ -12,26 +13,27 @@
 		}
 	}
 
-	&__item {
-		white-space: nowrap;
+	// &__item {
+	.nav-menu__item {
+		// white-space: nowrap;
 
-		&:not(:last-child)::after {
-			content: "";
+		&::after {
+			// content: "";
 			display: inline-block;
 			vertical-align: middle;
-			@include circle(2px);
+			// @include circle(2px);
 			margin: 0 rem(14px);
 		}
 	}
 
-	&__link {
-		@extend %btn-properties;
-		text-decoration: none;
-	}
+	// &__link {
+	// 	@extend %btn-properties;
+	// 	text-decoration: none;
+	// }
 
-	&__link:hover {
-		text-decoration: underline;
-	}
+	// &__link:hover {
+	// 	text-decoration: underline;
+	// }
 
 	&__btn {
 		margin-left: rem(15px);

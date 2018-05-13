@@ -1,7 +1,15 @@
 .start {
+	position: relative;
 
 	&__page-down {
 		align-self: center;
 		margin-bottom: rem(30px);
 	}
+
+	// &__tablet-menu.overlay-menu {
+		// position: absolute;
+		// width: 100%;
+		// height: 100%;
+		// display: none;
+	// }
 }

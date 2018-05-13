@@ -10,7 +10,7 @@
 		width: 49%;
 		height: 100%;
 		right: 0;
-		background-color: rgba(47, 50, 52, 0.93);
+		background-color: rgba($text-secondary-color, 0.93);
 
 		@include tablet {
 			justify-content: center;

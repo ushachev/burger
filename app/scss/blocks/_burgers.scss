@@ -1,0 +1,43 @@
+.burgers {
+	align-items: center;
+	background-color: $title-main-color;
+	background-image: linear-gradient( 180deg, rgb(249,180,59) 0%, rgb(235,140,56) 48%, rgb(249,180,59) 74%);
+
+	.container {
+		justify-content: center;
+		width: 85%;
+
+		@include phone {
+			width: 95%;
+		}
+	}
+
+	&__slider{
+		position: relative;
+	}
+
+	&__prev,
+	&__next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&__prev {
+		left: rem(-30px);
+
+		@include phone {
+			left: 0;
+		}
+	}
+
+	&__next {
+		right: rem(-30px);
+
+		@include phone {
+			right: 0;
+		}
+	}
+}
+
+

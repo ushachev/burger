@@ -2,7 +2,9 @@
 	display: flex;
 	justify-content: center;
 	position: absolute;
-	width: 100%;
+	// width: 100%;
+	left: 0;
+	right: 0;
 	bottom: 0;
 	background-color: #0f0f0f;
 	background-image: url(../img/bg_footer.jpg);
