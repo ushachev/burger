@@ -3,9 +3,7 @@
 	justify-content: flex-end;
 	align-items: center;
 
-	// &__list {
 	.nav-menu {
-		// display: flex;
 		justify-content: flex-end;
 
 		@include tablet {
@@ -13,27 +11,14 @@
 		}
 	}
 
-	// &__item {
 	.nav-menu__item {
-		// white-space: nowrap;
 
 		&::after {
-			// content: "";
 			display: inline-block;
 			vertical-align: middle;
-			// @include circle(2px);
 			margin: 0 rem(14px);
 		}
 	}
-
-	// &__link {
-	// 	@extend %btn-properties;
-	// 	text-decoration: none;
-	// }
-
-	// &__link:hover {
-	// 	text-decoration: underline;
-	// }
 
 	&__btn {
 		margin-left: rem(15px);
