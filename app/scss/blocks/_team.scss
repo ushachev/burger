@@ -3,10 +3,11 @@
 
 	&__overlay {
 		position: absolute;
-		display: flex;
-		align-items: center;
+		// display: flex;
+		// align-items: center;
 		box-sizing: border-box;
-		padding: 0 8% rem(33px);
+		// padding: 0 8% rem(33px);
+		padding: 17vh 8% 0;
 		width: 49%;
 		height: 100%;
 		right: 0;
@@ -15,11 +16,17 @@
 		@include tablet {
 			justify-content: center;
 			width: 100%;
-			padding-bottom: rem(75px);
+			// padding-bottom: rem(75px);
+			padding-top: 21vh;
 		}
 
 		@include phone {
-			padding-bottom: rem(22px);
+			// padding-bottom: rem(22px);
+			padding-top: 19vh;
+		}
+
+		@include phone-small {
+			padding-top: 10vh;
 		}
 	}
 }

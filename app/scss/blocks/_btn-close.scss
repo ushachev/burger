@@ -1,0 +1,22 @@
+.btn-close {
+	position: absolute;
+	width: 16px;
+	height: 0;
+	padding: 0;
+	box-sizing: content-box;
+	border: 2px solid transparent;
+	border-radius: 2px;
+	transform: rotate(45deg);
+
+	&::before {
+		position: absolute;
+		display: block;
+		content: '';
+		width: 100%;
+		top: -2px;
+		left: -2px;
+		border: 2px solid transparent;
+		border-radius: 2px;
+		transform: rotate(90deg);
+	}
+}

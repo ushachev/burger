@@ -51,11 +51,10 @@
 		display: flex;
 		height: 0;
 		overflow: hidden;
+		transition: height .6s;
 
 		.accordeon__item_active & {
 		    margin-bottom: rem(42px);
-			height: auto;
-			overflow: auto;
 		}
 
 		@include tablet {

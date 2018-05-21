@@ -6,13 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Проект Г-жа Кулебяка )</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="css/onepage-scroll.css">
 </head>
 <body>
-	<main class="content">
+	<main class="main">
 		<section id="page1" class="start section">
-			<div class="container">
-				<header class="header">
+			<header class="header">
+				<div class="header__container container">
 					<div class="logo">
 						<a href="#"><img class="visually-hidden" src="./img/logo.png" width="92" height="69" alt="Логотип Mr.Burger"></a>
 						<h1 class="logo__title">Магазин бургеров</h1>
@@ -41,7 +43,9 @@
 						<a href="#page7" class="main-nav__btn order-btn">Заказать</a>
 						<button class="humburger-menu-btn"></button>
 					</nav>
-				</header>
+				</div>	
+			</header>
+			<div class="start__container container">
 				<div class="promo">
 					<div class="promo__image" style="background-image: url(./img/burger-start.png)">
 						<img class="visually-hidden" src="./img/burger-start.png" width="451" height="424" alt="Фото бургера">
@@ -93,10 +97,342 @@
 				<div class="burgers__slider">
 					<a class="burgers__prev link link_prev"></a>
 					<div class="slider">
-						<ul class="slider__list">
+						<ul class="slider__list owl-carousel">
 							<li class="slider__item">
 								<div class="slider__image" style="background-image: url(img/slider/burger-slider1.png)">
 									<img class="visually-hidden" src="img/slider/burger-slider1.png" width="457" height="314" alt="Фото бургера">
+								</div>
+								<div class="slider__content">
+									<h2 class="slider__title title">Dark BEEF Burger</h2>
+									<div class="slider__info">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+									<div class="slider__price-block">
+										<span class="slider__price title">500</span>
+										<span class="slider__unit">рублей</span>
+									</div>
+									<button class="slider__btn order-btn">Заказать</button>
+								</div>
+								<div class="slider__composition composition">
+									<svg width="46" height="44" fill="#fff">
+										<use xlink:href="img/sprite.svg#burger"></use>	
+									</svg>
+									<span class="composition__label">состав</span>
+									<ul class="composition__list">
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="44" height="39" fill="#e25028">
+													<use xlink:href="img/sprite.svg#beef"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Говядина</span>
+											<span class="composition__weight">300 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="48" height="30" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#buns"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Булочки</span>
+											<span class="composition__weight">100 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="38" height="38" fill="#8BC03F">
+													<use xlink:href="img/sprite.svg#salad"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Зелень</span>
+											<span class="composition__weight">70 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="41" height="43" fill="#e25028">
+													<use xlink:href="img/sprite.svg#sauce"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Соус</span>
+											<span class="composition__weight">150 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="43" height="37" fill="#8ac03e">
+													<use xlink:href="img/sprite.svg#cucumber"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Овощи</span>
+											<span class="composition__weight">200 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="39" height="34" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#cheese"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Сыр</span>
+											<span class="composition__weight">80 г</span>
+										</li>
+									</ul>
+								</div>
+								<div class="slider__kkal kkal">
+									<svg width="60" height="60" fill="#fff">
+										<use xlink:href="img/sprite.svg#kkal"></use>	
+									</svg>
+									<span class="kkal__quantity">1200</span>
+									<span class="kkal__unit">ккал</span>
+								</div>
+							</li>
+							<li class="slider__item">
+								<div class="slider__image" style="background-image: url(img/slider/burger-slider2.png)">
+									<img class="visually-hidden" src="img/slider/burger-slider2.png" width="439" height="412" alt="Фото бургера">
+								</div>
+								<div class="slider__content">
+									<h2 class="slider__title title">Dark BEEF Burger</h2>
+									<div class="slider__info">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+									<div class="slider__price-block">
+										<span class="slider__price title">500</span>
+										<span class="slider__unit">рублей</span>
+									</div>
+									<button class="slider__btn order-btn">Заказать</button>
+								</div>
+								<div class="slider__composition composition">
+									<svg width="46" height="44" fill="#fff">
+										<use xlink:href="img/sprite.svg#burger"></use>	
+									</svg>
+									<span class="composition__label">состав</span>
+									<ul class="composition__list">
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="44" height="39" fill="#e25028">
+													<use xlink:href="img/sprite.svg#beef"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Говядина</span>
+											<span class="composition__weight">300 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="48" height="30" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#buns"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Булочки</span>
+											<span class="composition__weight">100 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="38" height="38" fill="#8BC03F">
+													<use xlink:href="img/sprite.svg#salad"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Зелень</span>
+											<span class="composition__weight">70 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="41" height="43" fill="#e25028">
+													<use xlink:href="img/sprite.svg#sauce"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Соус</span>
+											<span class="composition__weight">150 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="43" height="37" fill="#8ac03e">
+													<use xlink:href="img/sprite.svg#cucumber"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Овощи</span>
+											<span class="composition__weight">200 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="39" height="34" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#cheese"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Сыр</span>
+											<span class="composition__weight">80 г</span>
+										</li>
+									</ul>
+								</div>
+								<div class="slider__kkal kkal">
+									<svg width="60" height="60" fill="#fff">
+										<use xlink:href="img/sprite.svg#kkal"></use>	
+									</svg>
+									<span class="kkal__quantity">1200</span>
+									<span class="kkal__unit">ккал</span>
+								</div>
+							</li>
+							<li class="slider__item">
+								<div class="slider__image" style="background-image: url(img/slider/burger-slider3.png)">
+									<img class="visually-hidden" src="img/slider/burger-slider3.png" width="500" height="268" alt="Фото бургера">
+								</div>
+								<div class="slider__content">
+									<h2 class="slider__title title">Dark BEEF Burger</h2>
+									<div class="slider__info">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+									<div class="slider__price-block">
+										<span class="slider__price title">500</span>
+										<span class="slider__unit">рублей</span>
+									</div>
+									<button class="slider__btn order-btn">Заказать</button>
+								</div>
+								<div class="slider__composition composition">
+									<svg width="46" height="44" fill="#fff">
+										<use xlink:href="img/sprite.svg#burger"></use>	
+									</svg>
+									<span class="composition__label">состав</span>
+									<ul class="composition__list">
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="44" height="39" fill="#e25028">
+													<use xlink:href="img/sprite.svg#beef"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Говядина</span>
+											<span class="composition__weight">300 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="48" height="30" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#buns"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Булочки</span>
+											<span class="composition__weight">100 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="38" height="38" fill="#8BC03F">
+													<use xlink:href="img/sprite.svg#salad"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Зелень</span>
+											<span class="composition__weight">70 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="41" height="43" fill="#e25028">
+													<use xlink:href="img/sprite.svg#sauce"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Соус</span>
+											<span class="composition__weight">150 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="43" height="37" fill="#8ac03e">
+													<use xlink:href="img/sprite.svg#cucumber"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Овощи</span>
+											<span class="composition__weight">200 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="39" height="34" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#cheese"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Сыр</span>
+											<span class="composition__weight">80 г</span>
+										</li>
+									</ul>
+								</div>
+								<div class="slider__kkal kkal">
+									<svg width="60" height="60" fill="#fff">
+										<use xlink:href="img/sprite.svg#kkal"></use>	
+									</svg>
+									<span class="kkal__quantity">1200</span>
+									<span class="kkal__unit">ккал</span>
+								</div>
+							</li>
+							<li class="slider__item">
+								<div class="slider__image" style="background-image: url(img/slider/burger-slider4.png)">
+									<img class="visually-hidden" src="img/slider/burger-slider4.png" width="1000" height="796" alt="Фото бургера">
+								</div>
+								<div class="slider__content">
+									<h2 class="slider__title title">Dark BEEF Burger</h2>
+									<div class="slider__info">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+									<div class="slider__price-block">
+										<span class="slider__price title">500</span>
+										<span class="slider__unit">рублей</span>
+									</div>
+									<button class="slider__btn order-btn">Заказать</button>
+								</div>
+								<div class="slider__composition composition">
+									<svg width="46" height="44" fill="#fff">
+										<use xlink:href="img/sprite.svg#burger"></use>	
+									</svg>
+									<span class="composition__label">состав</span>
+									<ul class="composition__list">
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="44" height="39" fill="#e25028">
+													<use xlink:href="img/sprite.svg#beef"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Говядина</span>
+											<span class="composition__weight">300 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="48" height="30" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#buns"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Булочки</span>
+											<span class="composition__weight">100 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="38" height="38" fill="#8BC03F">
+													<use xlink:href="img/sprite.svg#salad"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Зелень</span>
+											<span class="composition__weight">70 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="41" height="43" fill="#e25028">
+													<use xlink:href="img/sprite.svg#sauce"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Соус</span>
+											<span class="composition__weight">150 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="43" height="37" fill="#8ac03e">
+													<use xlink:href="img/sprite.svg#cucumber"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Овощи</span>
+											<span class="composition__weight">200 г</span>
+										</li>
+										<li class="composition__item">
+											<div class="composition__icon">
+												<svg width="39" height="34" fill="#f8b43a">
+													<use xlink:href="img/sprite.svg#cheese"></use>	
+												</svg>
+											</div>
+											<span class="composition__ingrid">Сыр</span>
+											<span class="composition__weight">80 г</span>
+										</li>
+									</ul>
+								</div>
+								<div class="slider__kkal kkal">
+									<svg width="60" height="60" fill="#fff">
+										<use xlink:href="img/sprite.svg#kkal"></use>	
+									</svg>
+									<span class="kkal__quantity">1200</span>
+									<span class="kkal__unit">ккал</span>
+								</div>
+							</li>
+							<li class="slider__item">
+								<div class="slider__image" style="background-image: url(img/slider/burger-slider5.png)">
+									<img class="visually-hidden" src="img/slider/burger-slider5.png" width="1000" height="642" alt="Фото бургера">
 								</div>
 								<div class="slider__content">
 									<h2 class="slider__title title">Dark BEEF Burger</h2>
@@ -200,7 +536,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="accordeon__item accordeon__item_active">
+						<li class="accordeon__item">
 							<div class="accordeon__item-title">Ричард Джеймс</div>
 							<div class="accordeon__content">
 								<div class="accordeon__image" style="background-image: url(img/accordeon-img.jpeg)">
@@ -242,13 +578,14 @@
 		</section>
 		<section id="page5" class="menu section">
 			<h2 class="menu__title title">Меню</h2>
-			<ul class="accordeon-hor tapped">
-				<li class="accordeon-hor__item accordeon-hor__item_meat accordeon-hor__item_active">
+			<ul class="accordeon-hor">
+				<li class="accordeon-hor__item accordeon-hor__item_meat">
 					<h3 class="accordeon-hor__title">
 						<span>Для мясоедов</span>
 					</h3>
 					<div class="accordeon-hor__container">
 						<div class="accordeon-hor__content">Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.<br>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.</div>
+						<button class="accordeon-hor__btn-close btn-close"></button>
 					</div>
 				</li>
 				<li class="accordeon-hor__item accordeon-hor__item_veg">
@@ -257,6 +594,7 @@
 					</h3>
 					<div class="accordeon-hor__container">
 						<div class="accordeon-hor__content">Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.<br>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.</div>
+						<button class="accordeon-hor__btn-close btn-close"></button>
 					</div>
 				</li>
 				<li class="accordeon-hor__item accordeon-hor__item_diet">
@@ -265,6 +603,7 @@
 					</h3>
 					<div class="accordeon-hor__container">
 						<div class="accordeon-hor__content">Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.<br>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.</div>
+						<button class="accordeon-hor__btn-close btn-close"></button>
 					</div>
 				</li>
 			</ul>
@@ -275,8 +614,8 @@
 					<div class="review__overlay">
 						<div class="review__wrap">
 							<p class="review__author">Константин Спилберг</p>
-							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
-							<button class="btn review__more-btn">подробнее</button>
+							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
+							<button class="btn review__more-btn"><span></span></button>
 						</div>
 					</div>
 				</li>
@@ -294,7 +633,7 @@
 						<div class="review__wrap">
 							<p class="review__author">Константин Спилберг</p>
 							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
-							<button class="btn review__more-btn">подробнее</button>
+							<button class="btn review__more-btn"><span></span></button>
 						</div>
 					</div>
 				</li>
@@ -303,7 +642,7 @@
 						<div class="review__wrap">
 							<p class="review__author">Константин Спилберг</p>
 							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
-							<button class="btn review__more-btn">подробнее</button>
+							<button class="btn review__more-btn"><span></span></button>
 						</div>
 					</div>
 				</li>
@@ -312,7 +651,7 @@
 						<div class="review__wrap">
 							<p class="review__author">Константин Спилберг</p>
 							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
-							<button class="btn review__more-btn">подробнее</button>
+							<button class="btn review__more-btn"><span></span></button>
 						</div>
 					</div>
 				</li>
@@ -321,7 +660,7 @@
 						<div class="review__wrap">
 							<p class="review__author">Константин Спилберг</p>
 							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
-							<button class="btn review__more-btn">подробнее</button>
+							<button class="btn review__more-btn"><span></span></button>
 						</div>
 					</div>
 				</li>
@@ -330,7 +669,7 @@
 						<div class="review__wrap">
 							<p class="review__author">Константин Спилберг</p>
 							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
-							<button class="btn review__more-btn">подробнее</button>
+							<button class="btn review__more-btn"><span></span></button>
 						</div>
 					</div>
 				</li>
@@ -339,7 +678,7 @@
 						<div class="review__wrap">
 							<p class="review__author">Константин Спилберг</p>
 							<p class="review__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
-							<button class="btn review__more-btn">подробнее</button>
+							<button class="btn review__more-btn"><span></span></button>
 						</div>
 					</div>
 				</li>				
@@ -501,6 +840,19 @@
 		</div>
 	</div>
 </script>
-<script src="./libs/jquery-3.3.1.min.js"></script>
+<script type="template" id="overlay-review">
+	<div class="overlay-review">
+		<div class="overlay-review__container">
+			<div class="overlay-review__content">
+				<div class="overlay-review__title"></div>
+				<p class="overlay-review__text"></p>
+			</div>
+			<button class="overlay-review__btn-close btn-close"></button>
+		</div>
+	</div>
+</script>
+<script src="libs/jquery-3.3.1.min.js"></script>
+<script src="libs/jquery.onepage-scroll.min.js"></script>
+<script src="libs/owl.carousel.min.js"></script>
 <script src="js/app.min.js"></script>
 </html>

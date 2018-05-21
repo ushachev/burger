@@ -18,6 +18,14 @@
 			vertical-align: middle;
 			margin: 0 rem(14px);
 		}
+
+		@include tablet {
+			opacity: 0;
+		}
+
+		&_overlay {
+			opacity: 1;
+		}
 	}
 
 	&__btn {

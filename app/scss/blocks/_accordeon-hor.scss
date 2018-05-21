@@ -2,19 +2,25 @@
 	display: flex;
 	position: absolute;
 	right: 0;
-	// height: 100%;
 	top: 0;
 	bottom: 0;
+	transition: left .6s;
+	transition-delay: .4s;
 
-	&.tapped {
+	// @include phone {
+	// 	left: 285px;
+	// }
 
-		@include phone {
+	// &.tapped {
 
-			.accordeon-hor__item:not([class$="active"]) {
-				display: none;
-			}
-		}
-	}
+	// 	@include phone {
+	// 		left: 0 !important;
+
+	// 		.accordeon-hor__item:not([class$="active"]) {
+	// 			display: none;
+	// 		}
+	// 	}
+	// }
 
 	&__item {
 		display: flex;
@@ -64,71 +70,112 @@
 
 	&__container {
 		position: relative;
-		// flex: 1;
+		flex: 1;
 		width: 0;
 		box-sizing: border-box;
 		background-color: rgba($text-secondary-color, 0.93);
 		overflow: hidden;
+		transition: width .6s;
+		transition-delay: .4s;
 
-		.accordeon-hor__item_active & {
-			width: rem(540px);
-			padding: rem(60px) rem(33px);
+		// .accordeon-hor__item_active & {
+		// 	width: rem(540px);
 
-			@include tablet {
-				// display: none;
-				width: 100%;
-			}
+		// 	@include tablet {
+		// 		width: auto;
+		// 	}
+		// }
 
-			@include phone-small {
-				padding: rem(30px) rem(20px);
-			}
-		}
+		// .accordeon-hor__item_active:last-child & {
+		// 	width: rem(540px + $scroll-pag-offset);
 
-		.accordeon-hor__item_active:last-child & {
-			width: rem(540px + $scroll-pag-offset);
-			padding-right: rem(33px + $scroll-pag-offset);
+		// 	@include tablet {
+		// 		width: auto;
+		// 	}
+		// }
 
-			@include tablet {
-				width: 100%;
-			}
+		// @include phone {
 
-			@include phone-small {
-				padding: rem(30px) rem(20px);
-			}
-		}
+		// 	&::before,
+		// 	&::after {
+		// 		position: absolute;
+		// 		display: block;
+		// 		content: "";
+		// 		width: rem(25px);
+		// 		height: 0;
+		// 		top: rem(49px);
+		// 		right: rem(28px);
+		// 		border: 2px solid $text-main-color;
+		// 		border-radius: 2px;
 
-		@include phone {
+		// 		@include phone-small {
+		// 			width: 1rem;
+		// 			top: 1.5rem;
+		// 			right: 1rem;
+		// 		}
+		// 	}
 
-			&::before,
-			&::after {
-				position: absolute;
-				display: block;
-				content: "";
-				width: rem(25px);
-				height: 0;
-				top: rem(49px);
-				right: rem(28px);
-				border: 2px solid $text-main-color;
-				border-radius: 2px;
+		// 	&::before {
+		// 		transform: rotate(45deg);
+		// 	}
 
-				@include phone-small {
-					width: 1rem;
-					top: 1.5rem;
-					right: 1rem;
-				}
-			}
+		// 	&::after {
+		// 		transform: rotate(-45deg);
+		// 	}
+		// }
 
-			&::before {
-				transform: rotate(45deg);
-			}
 
-			&::after {
-				transform: rotate(-45deg);
-			}
-		}
 	}
 
 	&__content {
+		padding: rem(60px) rem(33px);
 		line-height: $main-font-line-heit;
+		opacity: 0;
+		transition: opacity .3s;
+		transition-delay: 0.2s;
+
+		.accordeon-hor__item:last-child & {
+			padding-right: rem(33px + $scroll-pag-offset);
+
+			@include tablet {
+				padding-right: rem(33px);
+			}
+		}
+
+		.accordeon-hor__item_active & {
+			opacity: 1;
+			transition-delay: .9s;
+		}
+
+		@include phone-small {
+			padding: rem(30px) rem(20px);
+		}
+	}
+
+	&__btn-close.btn-close {
+		top: 20px;
+		right: 14px;
+		border-color: $text-main-color;
+		opacity: 0;
+
+		&::before {
+			border-color: $text-main-color;
+		}
+
+		@include phone {
+			transition: opacity .3s;
+			transition-delay: 0.2s;
+
+			.accordeon-hor__item_active & {
+				opacity: 0.7;
+				transition-delay: .9s;
+			}
+		}
+
+		@include phone-small {
+			width: 1rem;
+			top: 1.5rem;
+			right: 1rem;
+		}
 	}
 }
