@@ -61,7 +61,7 @@ let overlay = (function(options) {
 	}
 
 	let _toggleOverlay = function() {
-		document.querySelector("body").classList.toggle("blocked");
+		document.querySelector("body").classList.toggle("disabled-onepage-scroll");
 		button.classList.toggle("humburger-menu-btn_clicked");
 		overlay.classList.toggle("header_overlay");
 		_menuAnimation();
@@ -69,6 +69,9 @@ let overlay = (function(options) {
 
 	let addListeners = function() {
 		button.addEventListener('click', _toggleOverlay);
+		button.addEventListener('keydown', function(e) {
+			e.preventDefault();
+		})
 		overlay.addEventListener('click', function(e) {
 			if (e.target.className === 'nav-menu__link' && 
 				button.classList.contains("humburger-menu-btn_clicked")) {
@@ -221,7 +224,7 @@ for (var i = 0; i < moreButtons.length; i++) {
 	moreButtons[i].addEventListener('click', function(e) {
 		let target = e.target.closest(".review__more-btn");
 		if (target) {
-			document.querySelector("body").classList.toggle("blocked");
+			document.querySelector("body").classList.add("disabled-onepage-scroll");
 			overlayReview.open(target.parentElement);
 		}
 	})
@@ -246,7 +249,7 @@ function createReview(templateIn) {
 	})
 
 	closeElem.addEventListener('click', function() {
-		document.querySelector("body").classList.toggle("blocked");
+		document.querySelector("body").classList.remove("disabled-onepage-scroll");
 		sectionRev.removeChild(overlayElem);
 	})
 
@@ -285,7 +288,7 @@ $(".main").onepage_scroll({
    easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
                                     // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
    animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
-   pagination: false,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
    updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
    beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
    afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
@@ -296,3 +299,20 @@ $(".main").onepage_scroll({
                                     // the browser's width is less than 600, the fallback will kick in.
    direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
 });
+
+// ==============================================
+
+let navigation = function() {
+	let startPage = document.querySelector('.start');
+
+	startPage.addEventListener('click', function(e) {
+		if (e.target.className === 'nav-menu__link' || 
+			e.target.classList.contains('main-nav__btn') ||
+			e.target.classList.contains('start__page-down')) {
+			e.preventDefault();
+			$('.main').moveTo(e.target.dataset.index);
+		}
+	})
+}
+
+navigation();

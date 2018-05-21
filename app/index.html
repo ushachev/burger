@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/owl.carousel.min.css" />
-	<link rel="stylesheet" href="css/onepage-scroll.css">
 </head>
 <body>
 	<main class="main">
@@ -22,25 +21,25 @@
 					<nav class="main-nav">
 						<ul class="main-nav__list nav-menu">
 							<li class="nav-menu__item">
-								<a href="#page2" class="nav-menu__link">О нас</a>
+								<a href="#page2" data-index="2" class="nav-menu__link">О нас</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page3" class="nav-menu__link">Бургеры</a>
+								<a href="#page3" data-index="3" class="nav-menu__link">Бургеры</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page4" class="nav-menu__link">Команда</a>
+								<a href="#page4" data-index="4" class="nav-menu__link">Команда</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page5" class="nav-menu__link">Меню</a>
+								<a href="#page5" data-index="5" class="nav-menu__link">Меню</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page6" class="nav-menu__link">Отзывы</a>
+								<a href="#page6" data-index="6" class="nav-menu__link">Отзывы</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page8" class="nav-menu__link">Контакты</a>
+								<a href="#page8" data-index="8" class="nav-menu__link">Контакты</a>
 							</li>
 						</ul>
-						<a href="#page7" class="main-nav__btn order-btn">Заказать</a>
+						<a href="#page7" data-index="7" class="main-nav__btn order-btn">Заказать</a>
 						<button class="humburger-menu-btn"></button>
 					</nav>
 				</div>	
@@ -55,7 +54,7 @@
 						<div class="promo__slogan-part2">натуральные бургеры</div>
 					</h2>
 				</div>
-				<a href="#page2" class="start__page-down link link_page-down"></a>
+				<a href="#page2" data-index="2" class="start__page-down link link_page-down"></a>
 			</div>
 		</section>
 		<section id="page2" class="about section">
@@ -795,51 +794,7 @@
 			</footer>
 		</section>
 	</main>
-	<ul class="scroll-paginator">
-		<li class="scroll-paginator__item"><a href="#page1" class="scroll-paginator__link active"></a></li>
-		<li class="scroll-paginator__item"><a href="#page2" class="scroll-paginator__link"></a></li>
-		<li class="scroll-paginator__item"><a href="#page3" class="scroll-paginator__link"></a></li>
-		<li class="scroll-paginator__item"><a href="#page4" class="scroll-paginator__link"></a></li>
-		<li class="scroll-paginator__item"><a href="#page5" class="scroll-paginator__link"></a></li>
-		<li class="scroll-paginator__item"><a href="#page6" class="scroll-paginator__link"></a></li>
-		<li class="scroll-paginator__item"><a href="#page7" class="scroll-paginator__link"></a></li>
-		<li class="scroll-paginator__item"><a href="#page8" class="scroll-paginator__link"></a></li>
-	</ul>
 </body>
-<script type="template" id="overlay-menu">
-	<div class="overlay-menu">
-		<div class="container">
-			<div class="header">
-				<div class="logo">
-					<a><img class="visually-hidden" src="./img/logo.png" width="92" height="69" alt="Логотип Mr.Burger"></a>
-				</div>
-				<nav class="main-nav">
-					<button class="humburger-menu-btn"></button>
-				</nav>
-			</div>
-			<ul class="overlay-menu__list nav-menu">
-				<li class="nav-menu__item">
-					<a href="#page2" class="nav-menu__link">О нас</a>
-				</li>
-				<li class="nav-menu__item">
-					<a href="#page3" class="nav-menu__link">Бургеры</a>
-				</li>
-				<li class="nav-menu__item">
-					<a href="#page4" class="nav-menu__link">Команда</a>
-				</li>
-				<li class="nav-menu__item">
-					<a href="#page5" class="nav-menu__link">Меню</a>
-				</li>
-				<li class="nav-menu__item">
-					<a href="#page6" class="nav-menu__link">Отзывы</a>
-				</li>
-				<li class="nav-menu__item">
-					<a href="#page8" class="nav-menu__link">Контакты</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</script>
 <script type="template" id="overlay-review">
 	<div class="overlay-review">
 		<div class="overlay-review__container">
