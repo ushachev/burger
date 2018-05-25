@@ -316,3 +316,62 @@ let navigation = function() {
 }
 
 navigation();
+
+// ==========================================
+
+let submitOrder = (function() {
+	let form = $('#order-form');
+
+	let displayModal = function(message) {
+		const sectionOrder = document.querySelector('.order');
+
+		let tempBlock = document.createElement('div');
+		tempBlock.innerHTML = document.querySelector('#overlay-order').innerHTML;
+
+		let closeElem = tempBlock.querySelector('.overlay-order__btn');
+		let overlayElem = tempBlock.querySelector(".overlay-order");
+		let textElem = tempBlock.querySelector(".overlay-order__text");
+
+		tempBlock = null;
+
+		textElem.innerHTML = message;
+		document.querySelector("body").classList.add("disabled-onepage-scroll");
+		sectionOrder.appendChild(overlayElem);
+
+		overlayElem.addEventListener('click', function(e) {
+			if (e.target === overlayElem) {
+				closeElem.click();
+			}
+		})
+
+		closeElem.addEventListener('click', function() {
+			document.querySelector("body").classList.remove("disabled-onepage-scroll");
+			sectionOrder.removeChild(overlayElem);
+		})
+	}
+
+	let addListener = function() {
+		form.on('submit', function(e) {
+			e.preventDefault();
+
+			let	data = form.serialize(),
+				type = form.attr('method'),
+				url = form.attr('action');
+
+			let request = $.ajax({
+				type: type,
+				url: url,
+				dataType: 'JSON',
+				data: data
+			}).done(function(msg) {
+				displayModal(msg.mes);
+			}).fail(function(jqXHR, textStatus) {
+		        alert("Request failed: " + textStatus);
+		    });
+		})
+	}
+
+	return {init: addListener};
+})();
+
+submitOrder.init();

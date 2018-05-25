@@ -1,0 +1,16 @@
+.overlay {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	background-color: rgba($text-secondary-color, 0.92);
+
+	&__container {
+		margin: auto;
+		border-radius: 5px;
+		background-color: $text-main-color;
+	}
+}

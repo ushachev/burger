@@ -1,0 +1,30 @@
+.overlay-order {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	background-color: rgba($text-secondary-color, 0.92);
+
+	&__container {
+		margin: auto;
+		width: 200px;
+		padding: 17px 20px 20px;
+		box-sizing: border-box;
+		border-radius: 5px;
+		text-align: center;
+		background-color: $text-main-color;
+		box-shadow: 0px 0px 40px 0px rgba(0, 0, 1, 0.5);
+	}
+
+	&__text {
+		margin-bottom: 17px;
+		color: $text-secondary-color;
+	}
+
+	&__btn:focus {
+		outline-color: $title-main-color;
+	}
+}

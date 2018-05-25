@@ -6,6 +6,7 @@
 	box-sizing: content-box;
 	border: 2px solid transparent;
 	border-radius: 2px;
+	outline: none;
 	transform: rotate(45deg);
 
 	&::before {

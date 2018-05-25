@@ -686,40 +686,40 @@
 		<section id="page7" class="order section">
 			<div class="container">
 				<h2 class="order__title title">Закажите доставку</h2>
-				<form action="#" method="post" class="order__form form">
+				<form action="http://localhost:82/server.php" method="POST" class="order__form form" id="order-form">
 					<div class="form__left-part">
 						<div class="form__row">
 							<label class="form__label">
 								<span class="form__inp-name">Имя</span>
-								<input type="text" name="name" class="form__input-txt">
+								<input type="text" name="name" class="form__input-txt" required>
 							</label>
 							<label class="form__label">
 								<span class="form__inp-name">Телефон</span>
-								<input type="text" name="tel" class="form__input-txt" placeholder="89212264923">
+								<input type="tel" name="tel" class="form__input-txt" placeholder="89212264923" pattern="[0-9]{6,11}" required>
 							</label>
 						</div>
 						<div class="form__row">
 							<label class="form__label">
 								<span class="form__inp-name">Улица</span>
-								<input type="text" name="street" class="form__input-txt">
+								<input type="text" name="street" class="form__input-txt" required>
 							</label>
 						</div>
 						<div class="form__row">
 							<label class="form__label">
 								<span class="form__inp-name">Дом</span>
-								<input type="text" name="house" class="form__input-txt">
+								<input type="text" name="house" class="form__input-txt" pattern="[0-9]{1,3}" required>
 							</label>
 							<label class="form__label">
 								<span class="form__inp-name">Корпус</span>
-								<input type="text" name="corp" class="form__input-txt">
+								<input type="text" name="corp" class="form__input-txt" pattern="[0-9]{1,2}">
 							</label>
 							<label class="form__label">
 								<span class="form__inp-name">Квартира</span>
-								<input type="text" name="apart" class="form__input-txt">
+								<input type="text" name="apart" class="form__input-txt" pattern="[0-9]{1,3}">
 							</label>
 							<label class="form__label">
 								<span class="form__inp-name">Этаж</span>
-								<input type="text" name="floor" class="form__input-txt">
+								<input type="text" name="floor" class="form__input-txt" pattern="[0-9]{1,3}">
 							</label>
 						</div>
 					</div>
@@ -728,12 +728,12 @@
 						<textarea name="comment" id="comment" class="form__textarea"></textarea>
 						<div class="form__all-btn-wrap">
 							<fielset class="form__pay">
-								<input type="radio" name="pay" id="pay-cash" class="form__radio">
+								<input type="radio" name="pay" id="pay-cash" class="form__radio" value="cash">
 								<label for="pay-cash" class="form__label-radio">Потребуется сдача</label>
-								<input type="radio" name="pay" id="pay-card" class="form__radio" checked>
+								<input type="radio" name="pay" id="pay-card" class="form__radio" value="card" checked>
 								<label for="pay-card" class="form__label-radio">Оплата по карте</label>
 							</fielset>
-							<input type="checkbox" name="" id="call-no" class="form__check" checked>
+							<input type="checkbox" name="callNo" id="call-no" class="form__check" checked>
 							<label for="call-no" class="form__label-check">Не перезванивать</label>
 							<div class="form__btn-wrap">
 								<button type="submit" class="form__btn order-btn">Заказать</button>
@@ -803,6 +803,14 @@
 				<p class="overlay-review__text"></p>
 			</div>
 			<button class="overlay-review__btn-close btn-close"></button>
+		</div>
+	</div>
+</script>
+<script type="template" id="overlay-order">
+	<div class="overlay-order">
+		<div class="overlay-order__container">
+			<div class="overlay-order__text"></div>
+			<button class="overlay-order__btn order-btn">Закрыть</button>
 		</div>
 	</div>
 </script>
