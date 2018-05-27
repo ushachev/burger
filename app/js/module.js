@@ -1,47 +1,3 @@
-// const humbButton = document.querySelector(".humburger-menu-btn");
-// const template = document.querySelector("#overlay-menu").innerHTML;
-// const section = document.querySelector(".start");
-
-// const overlayMenu = createMenu(template);
-
-// // humbButton.addEventListener('click', function() {
-// // 	overlayMenu.open();
-// // 	this.classList.toggle('humburger-menu-btn_clicked');
-// // });
-
-// function createMenu(templateIn) {
-// 	let tempBlock = document.createElement('div');
-
-// 	tempBlock.innerHTML = templateIn;
-
-// 	let closeElem = tempBlock.querySelector(".humburger-menu-btn");
-// 	let menuElem = tempBlock.querySelector(".overlay-menu");
-
-// 	tempBlock = null;
-
-// 	menuElem.addEventListener('click', function(e) {
-// 		let target = e.target;
-// 		if (target.className === 'nav-menu__link') {
-// 			closeElem.click();
-// 		}
-// 		if (target === menuElem) {
-// 			closeElem.classList.toggle('humburger-menu-btn_clicked');
-// 		}
-// 	})
-
-// 	closeElem.addEventListener('click', function() {
-// 		section.removeChild(menuElem);
-// 		humbButton.classList.toggle('humburger-menu-btn_clicked');
-// 	})
-
-// 	return {
-// 		open() {
-// 			section.appendChild(menuElem);
-// 		}
-// 	} 
-// }
-// ============================================
-
 let overlay = (function(options) {
 	let button = document.querySelector(options.button);
 	let overlay = document.querySelector(options.overlay);
@@ -304,11 +260,19 @@ $(".main").onepage_scroll({
 
 let navigation = function() {
 	let startPage = document.querySelector('.start');
+	let burgersPage = document.querySelector('.burgers');
 
 	startPage.addEventListener('click', function(e) {
 		if (e.target.className === 'nav-menu__link' || 
 			e.target.classList.contains('main-nav__btn') ||
 			e.target.classList.contains('start__page-down')) {
+			e.preventDefault();
+			$('.main').moveTo(e.target.dataset.index);
+		}
+	})
+
+	burgersPage.addEventListener('click', function(e) {
+		if (e.target.classList.contains('slider__btn')) {
 			e.preventDefault();
 			$('.main').moveTo(e.target.dataset.index);
 		}
@@ -322,7 +286,7 @@ navigation();
 let submitOrder = (function() {
 	let form = $('#order-form');
 
-	let displayModal = function(message) {
+	let _displayModal = function(message) {
 		const sectionOrder = document.querySelector('.order');
 
 		let tempBlock = document.createElement('div');
@@ -364,7 +328,7 @@ let submitOrder = (function() {
 				dataType: 'JSON',
 				data: data
 			}).done(function(msg) {
-				displayModal(msg.mes);
+				_displayModal(msg.mes);
 			}).fail(function(jqXHR, textStatus) {
 		        alert("Request failed: " + textStatus);
 		    });
@@ -375,3 +339,91 @@ let submitOrder = (function() {
 })();
 
 submitOrder.init();
+
+// ========================================
+
+ymaps.ready(init);
+
+var myPlacemarks = [
+    {
+        latitude: 59.97,
+        longitude: 30.31,
+        hintContent: 'ул. Литераторов, д. 19А',
+        balloonContent: [
+            '<div class="map__balloon">',
+            '<svg class="map__balloon-img">',
+			'<use xlink:href="img/sprite.svg#logo"></use>',	
+			'</svg>',
+            'ул. Литераторов, д. 19А',
+            '</div>'
+        ]
+    },
+    {
+        latitude: 59.945,  
+        longitude: 30.38,
+        hintContent: 'Калужский переулок, 9',
+        balloonContent: [
+            '<div class="map__balloon">',
+            '<svg class="map__balloon-img">',
+			'<use xlink:href="img/sprite.svg#logo"></use>',	
+			'</svg>',
+            'Калужский переулок, 9',
+            '</div>'
+        ]
+    },
+    {
+        latitude: 59.89,
+        longitude: 30.32,
+        hintContent: 'Московский проспект, 109',
+        balloonContent: [
+            '<div class="map__balloon">',
+            '<svg class="map__balloon-img">',
+			'<use xlink:href="img/sprite.svg#logo"></use>',	
+			'</svg>',
+            'Московский проспект, 109',
+            '</div>'
+        ]
+    },
+    {
+        latitude: 59.918,
+        longitude: 30.493,
+        hintContent: 'улица Подвойского, 42',
+        balloonContent: [
+            '<div class="map__balloon">',
+            '<svg class="map__balloon-img">',
+			'<use xlink:href="img/sprite.svg#logo"></use>',	
+			'</svg>',
+            'улица Подвойского, 42',
+            '</div>'
+        ]
+    }
+	];
+
+function init(){     
+    var myMap = new ymaps.Map("map", {
+        center: [59.94, 30.32],
+        zoom: 11,
+        controls: ['zoomControl'],
+        behaviors: ['drag']
+    });
+
+    var customIcon = ymaps.templateLayoutFactory
+    	.createClass('<svg width="46" height="57"><use xlink:href="img/sprite.svg#map-marker"></use></svg>');
+
+
+    myPlacemarks.forEach(function(obj) {
+    	var myPlacemark = new ymaps.Placemark([obj.latitude, obj.longitude], { 
+	            hintContent: obj.hintContent, 
+	            balloonContent: obj.balloonContent.join('') 
+	        },
+	        {
+	        	iconLayout: 'default#image',
+                iconImageHref: 'img/map-marker.svg',
+                iconImageSize: [46, 57],
+                iconImageOffset: [-23, -57]
+	        }
+	        );
+
+        myMap.geoObjects.add(myPlacemark);
+    })
+}

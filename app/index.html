@@ -4,10 +4,19 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Проект Г-жа Кулебяка )</title>
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!-- end favicon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<title>Mr.Burger Магазин бургеров</title>
 </head>
 <body>
 	<main class="main">
@@ -15,7 +24,11 @@
 			<header class="header">
 				<div class="header__container container">
 					<div class="logo">
-						<a href="#"><img class="visually-hidden" src="./img/logo.png" width="92" height="69" alt="Логотип Mr.Burger"></a>
+						<a>
+							<svg width="92" height="69">
+								<use xlink:href="img/sprite.svg#logo"></use>	
+							</svg>
+						</a>
 						<h1 class="logo__title">Магазин бургеров</h1>
 					</div>
 					<nav class="main-nav">
@@ -108,7 +121,7 @@
 										<span class="slider__price title">500</span>
 										<span class="slider__unit">рублей</span>
 									</div>
-									<button class="slider__btn order-btn">Заказать</button>
+									<button class="slider__btn order-btn" data-index="7">Заказать</button>
 								</div>
 								<div class="slider__composition composition">
 									<svg width="46" height="44" fill="#fff">
@@ -191,7 +204,7 @@
 										<span class="slider__price title">500</span>
 										<span class="slider__unit">рублей</span>
 									</div>
-									<button class="slider__btn order-btn">Заказать</button>
+									<button class="slider__btn order-btn" data-index="7">Заказать</button>
 								</div>
 								<div class="slider__composition composition">
 									<svg width="46" height="44" fill="#fff">
@@ -274,7 +287,7 @@
 										<span class="slider__price title">500</span>
 										<span class="slider__unit">рублей</span>
 									</div>
-									<button class="slider__btn order-btn">Заказать</button>
+									<button class="slider__btn order-btn" data-index="7">Заказать</button>
 								</div>
 								<div class="slider__composition composition">
 									<svg width="46" height="44" fill="#fff">
@@ -348,7 +361,7 @@
 							</li>
 							<li class="slider__item">
 								<div class="slider__image" style="background-image: url(img/slider/burger-slider4.png)">
-									<img class="visually-hidden" src="img/slider/burger-slider4.png" width="1000" height="796" alt="Фото бургера">
+									<img class="visually-hidden" src="img/slider/burger-slider4.png" width="417" height="332" alt="Фото бургера">
 								</div>
 								<div class="slider__content">
 									<h2 class="slider__title title">Dark BEEF Burger</h2>
@@ -357,7 +370,7 @@
 										<span class="slider__price title">500</span>
 										<span class="slider__unit">рублей</span>
 									</div>
-									<button class="slider__btn order-btn">Заказать</button>
+									<button class="slider__btn order-btn" data-index="7">Заказать</button>
 								</div>
 								<div class="slider__composition composition">
 									<svg width="46" height="44" fill="#fff">
@@ -431,7 +444,7 @@
 							</li>
 							<li class="slider__item">
 								<div class="slider__image" style="background-image: url(img/slider/burger-slider5.png)">
-									<img class="visually-hidden" src="img/slider/burger-slider5.png" width="1000" height="642" alt="Фото бургера">
+									<img class="visually-hidden" src="img/slider/burger-slider5.png" width="333" height="214" alt="Фото бургера">
 								</div>
 								<div class="slider__content">
 									<h2 class="slider__title title">Dark BEEF Burger</h2>
@@ -440,7 +453,7 @@
 										<span class="slider__price title">500</span>
 										<span class="slider__unit">рублей</span>
 									</div>
-									<button class="slider__btn order-btn">Заказать</button>
+									<button class="slider__btn order-btn" data-index="7">Заказать</button>
 								</div>
 								<div class="slider__composition composition">
 									<svg width="46" height="44" fill="#fff">
@@ -745,6 +758,7 @@
 			</div>
 		</section>
 		<section id="page8" class="map section">
+			<div id="map" class="map__yandex"></div>
 			<footer class="footer">
 				<div class="container container_footer">
 					<div class="footer__left">
@@ -796,8 +810,8 @@
 	</main>
 </body>
 <script type="template" id="overlay-review">
-	<div class="overlay-review">
-		<div class="overlay-review__container">
+	<div class="overlay-review overlay">
+		<div class="overlay-review__container overlay__container">
 			<div class="overlay-review__content">
 				<div class="overlay-review__title"></div>
 				<p class="overlay-review__text"></p>
@@ -807,8 +821,8 @@
 	</div>
 </script>
 <script type="template" id="overlay-order">
-	<div class="overlay-order">
-		<div class="overlay-order__container">
+	<div class="overlay-order overlay">
+		<div class="overlay-order__container overlay__container">
 			<div class="overlay-order__text"></div>
 			<button class="overlay-order__btn order-btn">Закрыть</button>
 		</div>
@@ -816,6 +830,7 @@
 </script>
 <script src="libs/jquery-3.3.1.min.js"></script>
 <script src="libs/jquery.onepage-scroll.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 <script src="libs/owl.carousel.min.js"></script>
 <script src="js/app.min.js"></script>
 </html>

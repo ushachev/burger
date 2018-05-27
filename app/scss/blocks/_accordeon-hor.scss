@@ -7,21 +7,6 @@
 	transition: left .6s;
 	transition-delay: .4s;
 
-	// @include phone {
-	// 	left: 285px;
-	// }
-
-	// &.tapped {
-
-	// 	@include phone {
-	// 		left: 0 !important;
-
-	// 		.accordeon-hor__item:not([class$="active"]) {
-	// 			display: none;
-	// 		}
-	// 	}
-	// }
-
 	&__item {
 		display: flex;
 	}
@@ -30,7 +15,6 @@
 		position: relative;
 		margin: 0;
 		width: rem(80px);
-		// flex: 1;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -77,54 +61,6 @@
 		overflow: hidden;
 		transition: width .6s;
 		transition-delay: .4s;
-
-		// .accordeon-hor__item_active & {
-		// 	width: rem(540px);
-
-		// 	@include tablet {
-		// 		width: auto;
-		// 	}
-		// }
-
-		// .accordeon-hor__item_active:last-child & {
-		// 	width: rem(540px + $scroll-pag-offset);
-
-		// 	@include tablet {
-		// 		width: auto;
-		// 	}
-		// }
-
-		// @include phone {
-
-		// 	&::before,
-		// 	&::after {
-		// 		position: absolute;
-		// 		display: block;
-		// 		content: "";
-		// 		width: rem(25px);
-		// 		height: 0;
-		// 		top: rem(49px);
-		// 		right: rem(28px);
-		// 		border: 2px solid $text-main-color;
-		// 		border-radius: 2px;
-
-		// 		@include phone-small {
-		// 			width: 1rem;
-		// 			top: 1.5rem;
-		// 			right: 1rem;
-		// 		}
-		// 	}
-
-		// 	&::before {
-		// 		transform: rotate(45deg);
-		// 	}
-
-		// 	&::after {
-		// 		transform: rotate(-45deg);
-		// 	}
-		// }
-
-
 	}
 
 	&__content {
