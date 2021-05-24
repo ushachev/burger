@@ -1,0 +1,10 @@
+.menu {
+	position: relative;
+
+	&__title.title {
+		position: absolute;
+		top: 16%;
+		left: 9%;
+		color: $title-secondary-color;
+	}
+}

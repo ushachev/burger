@@ -5,16 +5,24 @@ $title-secondary-color: #fff;
 $text-main-color: #fff;
 $text-secondary-color: #2f3234;
 $main-font: ubuntu, sans-serif;
+$main-font-size: 14px;
+$main-font-weight: 300;
+$main-font-line-heit: 1.71;
 $title-font: gagalin, sans-serif;
 $sub-title-font: lifehack, cursive;
+$scroll-pag-offset: 26px;
 
-$sections: start, about, team, menu, form;
+$sections: start, about, team, menu, order, map;
+
+$tablet: 768px;       // iPad
+$phone: 480px;        // Nokia N9
+$phone-small: 375px;  // iPhone6
 
 // ============заполнители==============
 
 %btn-properties {
 	font-weight: 500;
-	font-size: 13px;
+	font-size: 0.813rem;
 	text-transform: uppercase;
 	color: $text-main-color;
 }

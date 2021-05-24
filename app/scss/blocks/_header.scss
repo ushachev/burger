@@ -1,5 +1,54 @@
 .header {
 	display: flex;
-	justify-content: space-between;
-	padding: 13px 83px 0 76px;
+	justify-content: center;
+	padding-top: rem(13px);
+	width: 100%;
+	z-index: 10;
+
+	&__container {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&_overlay.header {
+		position: absolute;
+		height: 100%;
+		background-color: rgba($text-secondary-color, 0.99);
+
+		.header__container {
+			align-self: flex-start;
+		}
+
+		.nav-menu {
+			display: flex;
+			position: absolute;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding-bottom: rem(55px);
+		}
+
+		.nav-menu__item {
+			height: rem(60px);
+
+			&::after {
+				position: absolute;
+				top: 73%;
+				left: 50%;
+				margin: 0;
+			}
+		}
+
+		.nav-menu__link {
+			font-size: 24px;
+			font-weight: 400;
+		}
+
+		.main-nav__btn {
+			display: none;
+		}
+	}
 }

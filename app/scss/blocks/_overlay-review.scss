@@ -1,0 +1,35 @@
+.overlay-review {
+
+	&__container {
+		position: relative;
+		width: 460px;
+	}
+
+	&__content {
+		max-width: 100%;
+		padding: 25px 20px;
+		box-sizing: border-box;
+		color: $text-secondary-color;
+	}
+
+	&__title {
+		font-family: $title-font;
+		font-weight: 400;
+	}
+
+	&__text {
+		margin: 25px 0 0 0;
+		line-height: $main-font-line-heit;
+
+	}
+
+	&__btn-close.btn-close {
+		top: 20px;
+		right: 14px;
+		border-color: rgba($corp-color, 0.7);
+
+		&::before {
+			border-color: rgba($corp-color, 0.7);
+		}
+	}
+}

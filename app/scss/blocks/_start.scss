@@ -1,0 +1,18 @@
+.start {
+
+	&.section {
+		position: relative;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	&__container {
+		flex: 1;
+	}
+
+	&__page-down {
+		align-self: center;
+		margin-bottom: rem(30px);
+	}
+}

@@ -1,4 +1,5 @@
 .review {
+	position: relative;
 	
 	&__list {
 		display: flex;
@@ -20,6 +21,11 @@
 			&:nth-child(#{$i}) {
 				background-image: url('../img/review/photo#{$i}.jpeg');
 			}
+		}
+
+		@include tablet {
+			width: 50%;
+			height: 25%;
 		}		
 	}
 
@@ -30,13 +36,21 @@
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
-		padding: 0 30px 0 20px;
+		padding: 0 rem(30px) 0 rem(20px);
 		background-color: rgba(20, 20, 20, 0.7);
 		opacity: 0;
 		transition: opacity 0.7s ease;
 
 		&:hover {
 			opacity: 1;
+		}
+
+		@include tablet {
+			padding: 0 rem(55px);
+		}
+
+		@include phone-small {
+			padding: 0 1rem;
 		}
 	}
 
@@ -45,26 +59,61 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
+		max-height: 63%;
+
+		@include tablet {
+			width: 100%;
+			align-items: center;
+		}
 	}
 
 	&__author {
 		margin: 0;
 		font-family: $title-font;
-		color: $text-main-color;
-		font-size: 14px;
+
+		@include phone {
+			font-size: 24px;
+			text-align: center;
+			margin-bottom: 29px;
+		}
+
+		@include phone-small {
+			font-size: 20px;
+		}
 	}
 
 	&__text {
-		margin: 23px 0 15px;
-		max-width: 250px;
-		font-size: 14px;
-		font-weight: 300;
+		margin: rem(23px) 0 rem(15px);
+		max-width: rem(250px);
+		overflow: hidden;
 		line-height: 1.71;
+
+		@include tablet {
+			text-align: center;
+			min-width: 100%;
+		}
+
+		@include phone {
+			display: none;
+		}
 	}
 
 	&__more-btn {
 		@extend %btn-properties;
-		@include btn(#2f3234);
+		@include btn($text-secondary-color);
 		border: none;
+		flex-shrink: 0;
+
+		span {
+
+			&::before {
+				display: inline;
+				content: "Подробнее";
+
+				@include phone {
+					content: "Читать отзыв";
+				}
+			}	
+		}	
 	}
 }

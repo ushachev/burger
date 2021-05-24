@@ -1,13 +1,27 @@
  // ======общие настройки и классы секций======
+html {
+	width: 100%;
+	height: 100%;
+	font-size: 16px;
 
-html,
+	@include tablet {
+		font-size: 15px;
+	}
+
+	@include phone {
+		font-size: 13px;
+	}
+}
+
 body {
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: $main-font;
-	font-size: 16px;
+	font-size: $main-font-size;
+	font-weight: $main-font-weight;
 	color: $text-main-color;
-	overflow: hidden;
 }
 
 ul {
@@ -21,10 +35,22 @@ img {
 	max-height: 100%;
 }
 
+.main {
+	width: 100%;
+	height: 100%;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
-	width: 1100px;
+	max-width: rem(940px);
+	width: 93%;
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .visually-hidden {
@@ -32,9 +58,23 @@ img {
 }
 
 .title {
-	font-family: $title-font;
-	font-size: 72px;
-	font-weight: 400;
-	line-height: 85px;
-	color: $title-main-color;
+	margin: 0;
+	margin-bottom: rem(40px);
+	@include title();
+
+	@include tablet {
+		text-align: center;
+	}
+	
+	@include phone {
+		font-size: 50px;
+	}
 }
+
+.order-btn {
+	@extend %btn-properties;
+	@include btn($corp-color);
+	border: none;
+	text-decoration: none;
+}
+

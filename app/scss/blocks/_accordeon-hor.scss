@@ -1,0 +1,117 @@
+.accordeon-hor {
+	display: flex;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transition: left .6s;
+	transition-delay: .4s;
+
+	&__item {
+		display: flex;
+	}
+
+	&__title {
+		position: relative;
+		margin: 0;
+		width: rem(80px);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		overflow: hidden;
+		cursor: pointer;
+		
+		span {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			margin-bottom: rem(40px);
+			@include title(rem(40px), $title-secondary-color);
+			white-space: nowrap;
+			transform:
+					translateX(-50%)
+					translateY(50%)
+					rotate(-90deg)
+					translateX(50%);
+
+			.accordeon-hor__item_active & {
+				color: $title-main-color;
+			}
+		}
+
+		.accordeon-hor__item_meat & {
+			background-image: url(../img/bg_accord-meat.jpg);
+		}
+
+		.accordeon-hor__item_veg & {
+			background-image: url(../img/bg_accord-veg.jpg);
+		}
+
+		.accordeon-hor__item_diet & {
+			background-image: url(../img/bg_accord-diet.jpg);
+		}
+	}
+
+	&__container {
+		position: relative;
+		flex: 1;
+		width: 0;
+		box-sizing: border-box;
+		background-color: rgba($text-secondary-color, 0.93);
+		overflow: hidden;
+		transition: width .6s;
+		transition-delay: .4s;
+	}
+
+	&__content {
+		padding: rem(60px) rem(33px);
+		line-height: $main-font-line-heit;
+		opacity: 0;
+		transition: opacity .3s;
+		transition-delay: 0.2s;
+
+		.accordeon-hor__item:last-child & {
+			padding-right: rem(33px + $scroll-pag-offset);
+
+			@include tablet {
+				padding-right: rem(33px);
+			}
+		}
+
+		.accordeon-hor__item_active & {
+			opacity: 1;
+			transition-delay: .9s;
+		}
+
+		@include phone-small {
+			padding: rem(30px) rem(20px);
+		}
+	}
+
+	&__btn-close.btn-close {
+		top: 20px;
+		right: 14px;
+		border-color: $text-main-color;
+		opacity: 0;
+
+		&::before {
+			border-color: $text-main-color;
+		}
+
+		@include phone {
+			transition: opacity .3s;
+			transition-delay: 0.2s;
+
+			.accordeon-hor__item_active & {
+				opacity: 0.7;
+				transition-delay: .9s;
+			}
+		}
+
+		@include phone-small {
+			width: 1rem;
+			top: 1.5rem;
+			right: 1rem;
+		}
+	}
+}

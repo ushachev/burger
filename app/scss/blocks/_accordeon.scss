@@ -1,0 +1,102 @@
+.accordeon {
+	margin-left: rem(20px);
+
+	&__item {
+		margin-bottom: rem(20px);
+
+		@include tablet {
+			text-align: center;
+		}
+	}
+
+	&__item-title {
+		display: inline-block;
+		position: relative;
+		margin-bottom: rem(14px);
+		font-family: $title-font;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 0;
+			height: 0;
+			top: 0.4em;
+			left: -15px;
+			border-top: 7px solid $title-main-color;
+			border-left: 4.5px solid transparent;
+			border-right: 4.5px solid transparent;
+		}
+
+		.accordeon__item_active & {
+			color: $title-main-color;
+
+			&::before {
+					transform: rotate(180deg);
+				}
+		}
+
+		@include tablet {
+			font-size: 24px;
+		}
+
+		@include phone-small {
+			font-size: 20px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		height: 0;
+		overflow: hidden;
+		transition: height .6s;
+
+		.accordeon__item_active & {
+		    margin-bottom: rem(42px);
+		}
+
+		@include tablet {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__image {
+		flex-shrink: 0;
+		width: rem(100px);
+		height: rem(100px);
+		border-radius: 50%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		margin-right: rem(21px);
+
+		@include tablet {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__features {
+		@include tablet {
+			text-align: center;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: rem(16px);
+		font-weight: 700;
+	}
+
+	&__info {
+		max-width: rem(250px);
+		line-height: 1.71;
+
+		@include tablet {
+			max-width: rem(350px);
+		}
+	}
+}
