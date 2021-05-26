@@ -19,7 +19,7 @@
 
 		@for $i from 1 through 8 {
 			&:nth-child(#{$i}) {
-				background-image: url('../img/review/photo#{$i}.jpeg');
+				background-image: url('../img/backgrounds/review/photo#{$i}.jpeg');
 			}
 		}
 

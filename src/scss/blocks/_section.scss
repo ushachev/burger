@@ -13,6 +13,6 @@
 
 @each $section in $sections {
 	.#{$section} {
-		background-image: url("../img/bg_#{$section}.jpg");
+		background-image: url("../img/backgrounds/bg_#{$section}.jpg");
 	}
 }
