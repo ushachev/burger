@@ -17,8 +17,8 @@
 	<title>Mr.Burger Магазин бургеров</title>
 </head>
 <body>
-	<main class="main">
-		<section id="page1" class="start section">
+	<main id="fullpage" class="main">
+		<section class="start section">
 			<header class="header">
 				<div class="header__container container">
 					<div class="logo">
@@ -32,25 +32,25 @@
 					<nav class="main-nav">
 						<ul class="main-nav__list nav-menu">
 							<li class="nav-menu__item">
-								<a href="#page2" data-index="2" class="nav-menu__link">О нас</a>
+								<a href="#about" data-index="2" class="nav-menu__link">О нас</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page3" data-index="3" class="nav-menu__link">Бургеры</a>
+								<a href="#burgers" data-index="3" class="nav-menu__link">Бургеры</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page4" data-index="4" class="nav-menu__link">Команда</a>
+								<a href="#team" data-index="4" class="nav-menu__link">Команда</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page5" data-index="5" class="nav-menu__link">Меню</a>
+								<a href="#menu" data-index="5" class="nav-menu__link">Меню</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page6" data-index="6" class="nav-menu__link">Отзывы</a>
+								<a href="#reviews" data-index="6" class="nav-menu__link">Отзывы</a>
 							</li>
 							<li class="nav-menu__item">
-								<a href="#page8" data-index="8" class="nav-menu__link">Контакты</a>
+								<a href="#map" data-index="8" class="nav-menu__link">Контакты</a>
 							</li>
 						</ul>
-						<a href="#page7" data-index="7" class="main-nav__btn order-btn">Заказать</a>
+						<a href="#order" data-index="7" class="main-nav__btn order-btn">Заказать</a>
 						<button class="humburger-menu-btn"></button>
 					</nav>
 				</div>	
@@ -65,10 +65,10 @@
 						<div class="promo__slogan-part2">натуральные бургеры</div>
 					</h2>
 				</div>
-				<a href="#page2" data-index="2" class="start__page-down link link_page-down"></a>
+				<a href="#about" data-index="2" class="start__page-down link link_page-down"></a>
 			</div>
 		</section>
-		<section id="page2" class="about section">
+		<section class="about section">
 			<div class="container">
 				<h2 class="about__slogan title">Мы лучшие</h2>
 				<ul class="features">
@@ -102,7 +102,7 @@
 				</ul>
 			</div>
 		</section>
-		<section id="page3" class="burgers section">
+		<section class="burgers section">
 			<div class="container">
 				<div class="burgers__slider">
 					<a class="burgers__prev link link_prev"></a>
@@ -529,7 +529,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="page4" class="team section">
+		<section class="team section">
 			<div class="team__overlay">
 				<div class="team__container">
 					<h2 class="team__title title">Команда</h2>
@@ -586,7 +586,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="page5" class="menu section">
+		<section class="menu section">
 			<h2 class="menu__title title">Меню</h2>
 			<ul class="accordeon-hor">
 				<li class="accordeon-hor__item accordeon-hor__item_meat">
@@ -618,7 +618,7 @@
 				</li>
 			</ul>
 		</section>
-		<section  id="page6" class="review section">
+		<section class="review section">
 			<ul class="review__list">
 				<li class="review__item">
 					<div class="review__overlay">
@@ -694,7 +694,7 @@
 				</li>				
 			</ul>
 		</section>
-		<section id="page7" class="order section">
+		<section class="order section">
 			<div class="container">
 				<h2 class="order__title title">Закажите доставку</h2>
 				<form action="http://localhost:82/server.php" method="POST" class="order__form form" id="order-form">
@@ -755,8 +755,8 @@
 				</form>
 			</div>
 		</section>
-		<section id="page8" class="map section">
-			<div id="map" class="map__yandex"></div>
+		<section class="map section">
+			<div class="map__yandex"></div>
 			<footer class="footer">
 				<div class="container container_footer">
 					<div class="footer__left">

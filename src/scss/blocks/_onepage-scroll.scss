@@ -1,52 +1,11 @@
-body, html {
-  overflow: hidden;
-  transition: opacity 400ms;
-}
-
-.onepage-wrapper {
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-}
-
-.onepage-pagination {
-  position: fixed;
-  top: 14%;
-  right: $scroll-pag-offset;
-  z-index: 5;
-
-  @include tablet {
-    display: none;
-  }
-}
-
-.onepage-pagination li {
-  height: 21px;
-}
-
-.onepage-pagination li a{
-  position: relative;
-  display: inline-block;
-  @include circle(3px);
-  vertical-align: middle; 
-}
-
-.onepage-pagination li a:before{
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  @include circle(2px, transparent);
-  border: 1px solid #fff;
-  transform: translate(-50%, -50%);
-  transition: width, height, 0.4s;
-}
-
-.onepage-pagination li a.active:before,
-.onepage-pagination li a:hover::before {
-  width: 14px;
-  height: 14px;
-}
-
 .disabled-onepage-scroll .onepage-pagination {
   display: none;
+}
+
+#fp-nav ul.dark li a span {
+  background-color: #333;
+}
+
+#fp-nav ul.light li a span {
+  background-color: #fff;
 }
