@@ -19,7 +19,7 @@ const renderSideNav = ({ ui: { activeSection } }, { sideNav }) => {
 
 const animateMenu = ([menuItem, ...restMenuItems]) => {
   if (!menuItem) return;
-  menuItem.classList.toggle('nav-menu__item_overlay');
+  menuItem.classList.toggle('main-nav__item_overlay');
   setTimeout(animateMenu, 100, restMenuItems);
 };
 
@@ -30,7 +30,7 @@ const renderOverlayMenu = (state, { header, menuBtn, menuItems }) => {
   fullpage_api.setKeyboardScrolling(!isOpened); /* eslint-disable-line no-undef */
 
   header.classList.toggle('header_overlay');
-  menuBtn.classList.toggle('humburger-menu-btn_clicked');
+  menuBtn.classList.toggle('toggler_clicked');
 
   setTimeout(animateMenu, 100, menuItems);
 };

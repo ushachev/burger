@@ -16,9 +16,9 @@ export default () => {
 
   const elements = {
     header: document.querySelector('.header'),
-    menuBtn: document.querySelector('.humburger-menu-btn'),
-    menuItems: [...document.querySelectorAll('.nav-menu__item')],
-    menuLinks: [...document.querySelectorAll('.nav-menu__link')],
+    menuBtn: document.querySelector('.toggler'),
+    menuItems: [...document.querySelectorAll('.main-nav__item')],
+    menuLinks: [...document.querySelectorAll('.main-nav__link')],
   };
 
   const watchedState = initView(state, elements);

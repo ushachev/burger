@@ -19,7 +19,7 @@
 			align-self: flex-start;
 		}
 
-		.nav-menu {
+		.main-nav__list {
 			display: flex;
 			position: absolute;
 			flex-direction: column;
@@ -31,7 +31,7 @@
 			padding-bottom: rem(55px);
 		}
 
-		.nav-menu__item {
+		.main-nav__item {
 			height: rem(60px);
 
 			&::after {
@@ -42,7 +42,7 @@
 			}
 		}
 
-		.nav-menu__link {
+		.main-nav__link {
 			font-size: 24px;
 			font-weight: 400;
 		}
