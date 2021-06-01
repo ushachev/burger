@@ -1,0 +1,13 @@
+#fp-nav {
+  @include tablet {
+    display: none;
+  }
+
+  .dark li a span {
+    background-color: #333;
+  }
+
+  .light li a span {
+    background-color: #fff;
+  }
+}

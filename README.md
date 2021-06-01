@@ -1,8 +1,11 @@
 # Mr. Burger
 
+[![Node.js CI](https://github.com/ushachev/burger/actions/workflows/nodejs.yml/badge.svg)](https://github.com/ushachev/burger/actions/workflows/nodejs.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bbab5f69c76c17ab4e68/maintainability)](https://codeclimate.com/github/ushachev/burger/maintainability)
+
 One page landing site
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/bbab5f69c76c17ab4e68/maintainability)](https://codeclimate.com/github/ushachev/burger/maintainability)
+*
 
 Учащийся **Виталий Ушачёв**  
 
