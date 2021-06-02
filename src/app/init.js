@@ -12,16 +12,29 @@ export default () => {
         isOpened: false,
         status: 'idle',
       },
+      accordeon: {
+        activeItemIndex: null,
+        status: 'idle',
+      },
     },
   };
 
   const elements = {
     header: document.querySelector('.header'),
-    menuBtn: document.querySelector('.toggler'),
-    menuItems: [...document.querySelectorAll('.main-nav__item')],
-    menuLinks: [...document.querySelectorAll('.main-nav__link')],
-    sliderPrev: document.querySelector('.burgers__prev'),
-    sliderNext: document.querySelector('.burgers__next'),
+    nav: {
+      toggler: document.querySelector('.toggler'),
+      items: [...document.querySelectorAll('.main-nav__item')],
+      links: [...document.querySelectorAll('.main-nav__link')],
+    },
+    slider: {
+      prev: document.querySelector('.burgers__prev'),
+      next: document.querySelector('.burgers__next'),
+    },
+    accordeon: {
+      items: [...document.querySelectorAll('.accordeon__item')],
+      togglers: [...document.querySelectorAll('.accordeon__item-title')],
+      itemContents: [...document.querySelectorAll('.accordeon__content')],
+    },
   };
 
   const watchedState = initView(state, elements);
@@ -44,8 +57,8 @@ export default () => {
   keenSlider('.slider__list', {
     loop: true,
     created(slider) {
-      elements.sliderPrev.addEventListener('click', () => slider.prev());
-      elements.sliderNext.addEventListener('click', () => slider.next());
+      elements.slider.prev.addEventListener('click', () => slider.prev());
+      elements.slider.next.addEventListener('click', () => slider.next());
     },
   });
 

@@ -17,28 +17,47 @@ const renderSideNav = ({ ui: { activeSection } }, { sideNav }) => {
   sideNav.className = sideNavClassMap[activeSection];
 };
 
-const animateMenu = ([menuItem, ...restMenuItems]) => {
-  if (!menuItem) return;
-  menuItem.classList.toggle('main-nav__item_overlay');
-  setTimeout(animateMenu, 100, restMenuItems);
+const animateNav = ([navItem, ...restNavItems]) => {
+  if (!navItem) return;
+  navItem.classList.toggle('main-nav__item_overlay');
+  setTimeout(animateNav, 100, restNavItems);
 };
 
-const renderOverlayMenu = (state, { header, menuBtn, menuItems }) => {
+const renderOverlayMenu = (state, { header, nav }) => {
   const { isOpened } = state.ui.overlayMenu;
 
   fullpage_api.setAllowScrolling(!isOpened); /* eslint-disable-line no-undef */
   fullpage_api.setKeyboardScrolling(!isOpened); /* eslint-disable-line no-undef */
 
   header.classList.toggle('header_overlay');
-  menuBtn.classList.toggle('toggler_clicked');
+  nav.toggler.classList.toggle('toggler_clicked');
 
-  setTimeout(animateMenu, 100, menuItems);
+  setTimeout(animateNav, 100, nav.items);
+};
+
+const renderAccordeon = (state, { accordeon }) => {
+  const { activeItemIndex } = state.ui.accordeon;
+
+  accordeon.items.forEach((item) => {
+    item.classList.remove('accordeon__item_active');
+  });
+  accordeon.itemContents.forEach((itemContent) => {
+    itemContent.style.height = '';
+  });
+
+  if (activeItemIndex !== null) {
+    const itemContent = accordeon.itemContents[activeItemIndex];
+
+    accordeon.items[activeItemIndex].classList.add('accordeon__item_active');
+    itemContent.style.height = `${itemContent.scrollHeight}px`;
+  }
 };
 
 export default (state, elements) => {
   const statePathMapping = {
     'ui.activeSection': () => renderSideNav(state, elements),
     'ui.overlayMenu.isOpened': () => renderOverlayMenu(state, elements),
+    'ui.accordeon.activeItemIndex': () => renderAccordeon(state, elements),
   };
 
   const watchedState = onChange(state, (path) => statePathMapping[path]?.());

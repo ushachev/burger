@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 
 export default (elements, state) => {
-  elements.menuBtn.addEventListener('click', () => {
+  elements.nav.toggler.addEventListener('click', () => {
     if (state.ui.overlayMenu.status === 'idle') {
       state.ui.overlayMenu.status = 'processing';
       state.ui.overlayMenu.isOpened = !state.ui.overlayMenu.isOpened;
@@ -12,7 +12,18 @@ export default (elements, state) => {
     }
   });
 
-  elements.menuLinks.forEach((menuLink) => menuLink.addEventListener('click', () => {
+  elements.nav.links.forEach((link) => link.addEventListener('click', () => {
     state.ui.overlayMenu.isOpened = false;
+  }));
+
+  elements.accordeon.togglers.forEach((toggler, i) => toggler.addEventListener('click', () => {
+    if (state.ui.accordeon.status === 'idle') {
+      state.ui.accordeon.status = 'processing';
+      state.ui.accordeon.activeItemIndex = state.ui.accordeon.activeItemIndex === i ? null : i;
+
+      setTimeout(() => {
+        state.ui.accordeon.status = 'idle';
+      }, 600);
+    }
   }));
 };
