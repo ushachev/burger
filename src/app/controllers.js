@@ -26,4 +26,18 @@ export default (elements, state) => {
       }, 600);
     }
   }));
+
+  elements.horizontalAccordeon.togglers.forEach((toggler, i) => toggler
+    .addEventListener('click', () => {
+      const { horizontalAccordeon } = state.ui;
+
+      if (horizontalAccordeon.status === 'idle') {
+        horizontalAccordeon.status = 'processing';
+        horizontalAccordeon.activeItemIndex = horizontalAccordeon.activeItemIndex === i ? null : i;
+
+        setTimeout(() => {
+          horizontalAccordeon.status = 'idle';
+        }, 600);
+      }
+    }));
 };

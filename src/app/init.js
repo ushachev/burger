@@ -16,6 +16,10 @@ export default () => {
         activeItemIndex: null,
         status: 'idle',
       },
+      horizontalAccordeon: {
+        activeItemIndex: null,
+        status: 'idle',
+      },
     },
   };
 
@@ -34,6 +38,11 @@ export default () => {
       items: [...document.querySelectorAll('.accordeon__item')],
       togglers: [...document.querySelectorAll('.accordeon__item-title')],
       itemContents: [...document.querySelectorAll('.accordeon__content')],
+    },
+    horizontalAccordeon: {
+      items: [...document.querySelectorAll('.accordeon-hor__item')],
+      togglers: [...document.querySelectorAll('.accordeon-hor__title')],
+      itemContents: [...document.querySelectorAll('.accordeon-hor__container')],
     },
   };
 

@@ -2,6 +2,8 @@
 
 import onChange from 'on-change';
 
+const MAX_HORIZONTAL_ACCORDEON_CONTENT_WIDTH = 550;
+
 const renderSideNav = ({ ui: { activeSection } }, { sideNav }) => {
   const sideNavClassMap = {
     start: 'light',
@@ -35,15 +37,13 @@ const renderOverlayMenu = (state, { header, nav }) => {
   setTimeout(animateNav, 100, nav.items);
 };
 
-const renderAccordeon = (state, { accordeon }) => {
+const renderAccordeon = (state, { accordeon }, prevItemIndex) => {
   const { activeItemIndex } = state.ui.accordeon;
 
-  accordeon.items.forEach((item) => {
-    item.classList.remove('accordeon__item_active');
-  });
-  accordeon.itemContents.forEach((itemContent) => {
-    itemContent.style.height = '';
-  });
+  if (prevItemIndex !== null) {
+    accordeon.items[prevItemIndex].classList.remove('accordeon__item_active');
+    accordeon.itemContents[prevItemIndex].style.height = '';
+  }
 
   if (activeItemIndex !== null) {
     const itemContent = accordeon.itemContents[activeItemIndex];
@@ -53,14 +53,42 @@ const renderAccordeon = (state, { accordeon }) => {
   }
 };
 
+const renderHorizontalAccordeon = (state, elements, prevItemIndex) => {
+  const { activeItemIndex } = state.ui.horizontalAccordeon;
+  const { togglers: [toggler], items, itemContents } = elements.horizontalAccordeon;
+
+  if (prevItemIndex !== null) {
+    items[prevItemIndex].classList.remove('accordeon-hor__item_active');
+    itemContents[prevItemIndex].style.width = '';
+  }
+
+  if (activeItemIndex !== null) {
+    const togglerWidth = parseInt(getComputedStyle(toggler).width, 10);
+    const calculatedСontentWidth = window.innerWidth - items.length * togglerWidth;
+    const contentWidth = calculatedСontentWidth > MAX_HORIZONTAL_ACCORDEON_CONTENT_WIDTH
+      ? MAX_HORIZONTAL_ACCORDEON_CONTENT_WIDTH
+      : calculatedСontentWidth;
+
+    items[activeItemIndex].classList.add('accordeon-hor__item_active');
+    itemContents[activeItemIndex].style.width = `${contentWidth}px`;
+  }
+};
+
 export default (state, elements) => {
   const statePathMapping = {
     'ui.activeSection': () => renderSideNav(state, elements),
     'ui.overlayMenu.isOpened': () => renderOverlayMenu(state, elements),
-    'ui.accordeon.activeItemIndex': () => renderAccordeon(state, elements),
+    'ui.accordeon.activeItemIndex': (prevItemIndex) => (
+      renderAccordeon(state, elements, prevItemIndex)
+    ),
+    'ui.horizontalAccordeon.activeItemIndex': (prevItemIndex) => (
+      renderHorizontalAccordeon(state, elements, prevItemIndex)
+    ),
   };
 
-  const watchedState = onChange(state, (path) => statePathMapping[path]?.());
+  const watchedState = onChange(
+    state, (path, _value, previousValue) => statePathMapping[path]?.(previousValue),
+  );
 
   return watchedState;
 };
