@@ -40,4 +40,8 @@ export default (elements, state) => {
         }, 600);
       }
     }));
+
+  elements.horizontalAccordeon.closeBtns.forEach((btn) => btn.addEventListener('click', () => {
+    state.ui.horizontalAccordeon.activeItemIndex = null;
+  }));
 };

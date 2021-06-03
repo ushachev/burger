@@ -4,8 +4,8 @@
 	right: 0;
 	top: 0;
 	bottom: 0;
-	transition: left .6s;
-	transition-delay: .4s;
+	transition: transform .5s;
+	transition-delay: .1s;
 
 	&__item {
 		display: flex;
@@ -98,12 +98,12 @@
 		}
 
 		@include phone {
-			transition: opacity .3s;
-			transition-delay: 0.2s;
+			transition: opacity .1s;
+			transition-delay: 0.1s;
 
 			.accordeon-hor__item_active & {
 				opacity: 0.7;
-				transition-delay: .9s;
+				transition-delay: .7s;
 			}
 		}
 

@@ -55,22 +55,32 @@ const renderAccordeon = (state, { accordeon }, prevItemIndex) => {
 
 const renderHorizontalAccordeon = (state, elements, prevItemIndex) => {
   const { activeItemIndex } = state.ui.horizontalAccordeon;
-  const { togglers: [toggler], items, itemContents } = elements.horizontalAccordeon;
+  const {
+    block, togglers: [toggler], items, itemContents,
+  } = elements.horizontalAccordeon;
 
   if (prevItemIndex !== null) {
     items[prevItemIndex].classList.remove('accordeon-hor__item_active');
     itemContents[prevItemIndex].style.width = '';
+    block.style.transform = 'translateX(0)';
   }
 
   if (activeItemIndex !== null) {
     const togglerWidth = parseInt(getComputedStyle(toggler).width, 10);
-    const calculatedСontentWidth = window.innerWidth - items.length * togglerWidth;
+    const isPhone = window.innerWidth <= 480;
+    const visibleItemCount = isPhone ? 1 : items.length;
+    const calculatedСontentWidth = window.innerWidth - visibleItemCount * togglerWidth;
+
+    const blockOffset = isPhone
+      ? togglerWidth * (items.length - (activeItemIndex + 1))
+      : 0;
     const contentWidth = calculatedСontentWidth > MAX_HORIZONTAL_ACCORDEON_CONTENT_WIDTH
       ? MAX_HORIZONTAL_ACCORDEON_CONTENT_WIDTH
       : calculatedСontentWidth;
 
     items[activeItemIndex].classList.add('accordeon-hor__item_active');
     itemContents[activeItemIndex].style.width = `${contentWidth}px`;
+    block.style.transform = `translateX(${blockOffset}px)`;
   }
 };
 

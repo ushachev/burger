@@ -40,9 +40,11 @@ export default () => {
       itemContents: [...document.querySelectorAll('.accordeon__content')],
     },
     horizontalAccordeon: {
+      block: document.querySelector('.accordeon-hor'),
       items: [...document.querySelectorAll('.accordeon-hor__item')],
       togglers: [...document.querySelectorAll('.accordeon-hor__title')],
       itemContents: [...document.querySelectorAll('.accordeon-hor__container')],
+      closeBtns: [...document.querySelectorAll('.accordeon-hor__btn-close')],
     },
   };
 
