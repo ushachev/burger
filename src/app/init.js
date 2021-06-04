@@ -20,6 +20,9 @@ export default () => {
         activeItemIndex: null,
         status: 'idle',
       },
+      review: {
+        activeItemIndex: null,
+      },
     },
   };
 
@@ -45,6 +48,11 @@ export default () => {
       togglers: [...document.querySelectorAll('.accordeon-hor__title')],
       itemContents: [...document.querySelectorAll('.accordeon-hor__container')],
       closeBtns: [...document.querySelectorAll('.accordeon-hor__btn-close')],
+    },
+    review: {
+      section: document.querySelector('.review.section'),
+      moreBtns: [...document.querySelectorAll('.review__more-btn')],
+      template: document.getElementById('overlay-review'),
     },
   };
 

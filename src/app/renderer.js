@@ -4,6 +4,18 @@ import onChange from 'on-change';
 
 const MAX_HORIZONTAL_ACCORDEON_CONTENT_WIDTH = 550;
 
+const disableFullpageScroll = (isDisabled, sideNav) => {
+  fullpage_api.setAllowScrolling(!isDisabled); /* eslint-disable-line no-undef */
+  fullpage_api.setKeyboardScrolling(!isDisabled); /* eslint-disable-line no-undef */
+  fullpage_api.setLockAnchors(isDisabled); /* eslint-disable-line no-undef */
+
+  if (isDisabled) {
+    sideNav.classList.add('disabled');
+  } else {
+    sideNav.classList.remove('disabled');
+  }
+};
+
 const renderSideNav = ({ ui: { activeSection } }, { sideNav }) => {
   const sideNavClassMap = {
     start: 'light',
@@ -25,11 +37,10 @@ const animateNav = ([navItem, ...restNavItems]) => {
   setTimeout(animateNav, 100, restNavItems);
 };
 
-const renderOverlayMenu = (state, { header, nav }) => {
+const renderOverlayMenu = (state, { header, nav, sideNav }) => {
   const { isOpened } = state.ui.overlayMenu;
 
-  fullpage_api.setAllowScrolling(!isOpened); /* eslint-disable-line no-undef */
-  fullpage_api.setKeyboardScrolling(!isOpened); /* eslint-disable-line no-undef */
+  disableFullpageScroll(isOpened, sideNav);
 
   header.classList.toggle('header_overlay');
   nav.toggler.classList.toggle('toggler_clicked');
@@ -84,6 +95,38 @@ const renderHorizontalAccordeon = (state, elements, prevItemIndex) => {
   }
 };
 
+const renderReviewModal = (state, { review, sideNav }) => {
+  const { activeItemIndex } = state.ui.review;
+
+  disableFullpageScroll(activeItemIndex !== null, sideNav);
+
+  if (activeItemIndex === null) {
+    review.section.querySelector('.overlay-review').remove();
+    return;
+  }
+
+  const reviewItem = review.moreBtns[activeItemIndex].parentElement;
+
+  const modal = review.template.content.firstElementChild.cloneNode(true);
+  const modalTitle = modal.querySelector('.overlay-review__title');
+  const modalText = modal.querySelector('.overlay-review__text');
+  const modalCloseBtn = modal.querySelector('.overlay-review__btn-close');
+
+  modalCloseBtn.addEventListener('click', () => {
+    state.ui.review.activeItemIndex = null;
+  });
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      state.ui.review.activeItemIndex = null;
+    }
+  });
+
+  modalTitle.textContent = reviewItem.querySelector('.review__author').textContent;
+  modalText.textContent = reviewItem.querySelector('.review__text').textContent;
+
+  review.section.append(modal);
+};
+
 export default (state, elements) => {
   const statePathMapping = {
     'ui.activeSection': () => renderSideNav(state, elements),
@@ -94,10 +137,11 @@ export default (state, elements) => {
     'ui.horizontalAccordeon.activeItemIndex': (prevItemIndex) => (
       renderHorizontalAccordeon(state, elements, prevItemIndex)
     ),
+    'ui.review.activeItemIndex': (_pV, watchedState) => renderReviewModal(watchedState, elements),
   };
 
   const watchedState = onChange(
-    state, (path, _value, previousValue) => statePathMapping[path]?.(previousValue),
+    state, (path, _value, previousValue) => statePathMapping[path]?.(previousValue, watchedState),
   );
 
   return watchedState;

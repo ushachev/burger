@@ -44,4 +44,8 @@ export default (elements, state) => {
   elements.horizontalAccordeon.closeBtns.forEach((btn) => btn.addEventListener('click', () => {
     state.ui.horizontalAccordeon.activeItemIndex = null;
   }));
+
+  elements.review.moreBtns.forEach((btn, i) => btn.addEventListener('click', () => {
+    state.ui.review.activeItemIndex = i;
+  }));
 };
