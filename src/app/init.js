@@ -3,6 +3,7 @@ import keenSlider from 'keen-slider';
 
 import initView from './renderer.js';
 import addListeners from './controllers.js';
+import loadYmaps from './ymapsLoader.js';
 
 export default () => {
   const state = {
@@ -57,6 +58,29 @@ export default () => {
   };
 
   const watchedState = initView(state, elements);
+
+  loadYmaps([
+    {
+      latitude: 59.97,
+      longitude: 30.31,
+      hintContent: 'ул. Литераторов, д. 19А',
+    },
+    {
+      latitude: 59.945,
+      longitude: 30.38,
+      hintContent: 'Калужский переулок, 9',
+    },
+    {
+      latitude: 59.89,
+      longitude: 30.32,
+      hintContent: 'Московский проспект, 109',
+    },
+    {
+      latitude: 59.918,
+      longitude: 30.493,
+      hintContent: 'улица Подвойского, 42',
+    },
+  ]);
 
   fullpage('#fullpage', {
     licenseKey: null,

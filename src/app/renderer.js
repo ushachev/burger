@@ -5,9 +5,9 @@ import onChange from 'on-change';
 const MAX_HORIZONTAL_ACCORDEON_CONTENT_WIDTH = 550;
 
 const disableFullpageScroll = (isDisabled, sideNav) => {
-  fullpage_api.setAllowScrolling(!isDisabled); /* eslint-disable-line no-undef */
-  fullpage_api.setKeyboardScrolling(!isDisabled); /* eslint-disable-line no-undef */
-  fullpage_api.setLockAnchors(isDisabled); /* eslint-disable-line no-undef */
+  global.fullpage_api.setAllowScrolling(!isDisabled);
+  global.fullpage_api.setKeyboardScrolling(!isDisabled);
+  global.fullpage_api.setLockAnchors(isDisabled);
 
   if (isDisabled) {
     sideNav.classList.add('disabled');
